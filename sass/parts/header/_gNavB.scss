@@ -1,0 +1,24 @@
+.gNav.gNav--typeB{
+  > ul{
+    li{
+      margin-right: 30px;
+      a{
+        font-size: 12px;
+        display: block;
+        strong{
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  li.hasChildren{
+    > a{
+      &::after{
+        content: "";
+        top: 50%;
+        -webkit-transform: rotate(135deg) translateY(-50%);
+                transform: rotate(135deg) translateY(-50%);
+      }
+    }
+  }
+}

@@ -1,0 +1,61 @@
+.gNav{
+  > ul{
+    display: -ms-flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    > li{
+      display: block;
+      &:not(:last-child){
+        margin-right: 30px;
+      }
+      > a{
+        text-decoration: none;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        text-align: center;
+        min-height: 60px;
+        @media all and (-ms-high-contrast: none) {
+          line-height: 60px;
+        }
+        strong{
+          display: block;
+          margin-bottom: 8px;
+        }
+        &:hover{
+          color: $color_primary;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  li.hasChildren{
+    > a{
+      padding-right: 16px;
+      &::after{
+        content: "";
+        right: 0;
+      }
+    }
+  }
+}
+.hdrMiddle {
+  .gNav > ul > li > a,
+  .gNav > ul > li > span{
+    height: 80px;
+    @if $device_mode != 'pc'{
+      @media (max-width: $container - 1+px) {
+        height: 60px;
+      }
+    }
+  }
+}
+.gNav__listIcon{
+  display: inline-block;
+  margin-right: 5px;
+}

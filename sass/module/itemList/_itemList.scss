@@ -1,0 +1,241 @@
+.itemList {
+  .itemList__unit{
+    line-height: 24px;
+  }
+  a.itemWrap{
+    display: block;
+    line-height: 24px;
+    &:hover,&:active{
+      color: $color_primary;
+      img{
+        opacity: 0.8;
+      }
+    }
+  }
+  .itemImg,.itemImg img{
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    display: block;
+    text-align: center;
+
+  }
+  p{
+    line-height: 24px;
+    padding: 3px 0;
+    @media (max-width: $braekpoint_tab+px) {
+      padding: 1px 0;
+    }
+    margin-bottom: 0;
+  }
+  .itemPrice{
+    font-weight: 500;
+  }
+  small{
+    font-weight: normal;
+    font-size: 12px;
+    display: inline-block;margin-left: 5px;
+  }
+  .button{
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+}
+
+.itemList--ranking{
+  .itemList__unit{
+    position: relative;
+    &:before{
+      content: "";
+      z-index: 2;
+      display: block;
+      position: absolute;
+      top: 10px;
+      left: 25px;
+      width: 35px;
+      height: 35px;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 35px;
+      text-align: center;
+      background: #fff;
+      border: 1px solid $color_border;
+      border-radius: 50%;
+    }
+  }
+  .itemList__unit{
+    &:nth-child(1){
+      &:before{
+        background: #FFF1BD;
+        border-color: #EFDA8E;
+      }
+    }
+    &:nth-child(2){
+      &:before{
+        background: #EAEAEA;
+        border-color: #C8C8C8;
+      }
+    }
+    &:nth-child(3){
+      &:before{
+        background: #FFDDBD;
+        border-color: #DFBD9E;
+      }
+    }
+
+    @for $i from 1 through 20 {
+      &:nth-child(#{$i}):before { content: "#{$i}"; }
+    }
+
+  }
+}
+
+.itemList--typeC{
+  .itemWrap{
+    position: relative;
+    transition: 0.1s;
+    padding: 20px;
+    box-shadow:0px 2px 6px 0px rgba(0,0,0,0.25);
+    border-radius: 4px;
+    background: #fff;
+
+    &:before{
+      content: "MORE";
+      position: absolute;
+      right: 28px;
+      bottom: 20px;
+      font-size: 12px;
+      font-weight: bold;
+      line-height: 1;
+    }
+    &:after{
+      bottom: 20px;
+      top: auto !important;
+      right: 20px;
+    }
+
+    &:hover,&:active{
+      transition: 0.2s;
+      box-shadow:0px 4px 10px 0px rgba(0,0,0,0.3);
+      transform: translateY(-3px);
+      &:before{
+        color: $color_primary;
+      }
+    }
+    .itemPrice{
+      padding-right: 60px;
+    }
+
+    @media (max-width: $braekpoint_tab+px) {
+      padding: 15px 15px 35px 15px;
+      &:before{
+        color: $color_primary;
+        right: 23px;
+        bottom: 15px;
+      }
+      &:after{
+        border-color: $color_primary !important;
+        bottom: 15px;
+        right: 15px;
+      }
+      .itemPrice{
+        padding-right: 0px;
+      }
+    }
+  }
+}
+
+.itemList--typeD{
+  @media (max-width: $braekpoint_sp2+px){
+    margin-left: -5px;
+    margin-right: -5px;
+    .itemList__unit{
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+  }
+  .itemWrap{
+    transition: 0.1s;
+    border: 1px solid $color_border;
+    border-radius: 6px;
+    padding: 20px;
+    @media (max-width: $braekpoint_tab+px) {
+      padding: 10px;
+    }
+    background: #fff;
+    &:hover,&:active{
+      background: $color_highlight_bg;
+      transition: 0.2s;
+      box-shadow:0px 2px 4px 0px rgba(0,0,0,0.25);
+      transform: translateY(-3px);
+      &:before{
+        color: $color_primary;
+      }
+    }
+    .button{
+      box-shadow: none;
+    }
+  }
+}
+
+@media (max-width: 767px){
+  .itemList .button,
+  .itemList a.button{
+    font-size: 12px;
+    padding: 5px;
+    padding-left: 20px;
+    padding-right: 20px !important;
+    &.arrow::after{
+      right: 8px;
+    }
+  }
+}
+
+
+.itemList--rankingCustom{
+  .itemList__unit{
+    &::before{
+      content: none !important;
+    }
+    @for $i from 1 through 20 {
+      &:nth-child(#{$i}) .itemWrap__text:before { content: "#{$i}"; }
+    }
+
+    .itemWrap__text{
+      position: relative;
+      &:before{
+        content: "";
+        z-index: 2;
+        display: block;
+        top: 10px;
+        left: 25px;
+        width: 24px;
+        height: 24px;
+        font-weight: bold;
+        font-size: 11px;
+        line-height: 24px;
+        text-align: center;
+        background: #000;
+        color: #fff;
+        border-radius: 50%;
+        margin-bottom: 10px;
+      }
+    }
+  }
+  a.itemWrap{
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    .itemWrap__img{
+      max-width: 100px;
+      flex: 0 0 100px;
+    }
+    .itemWrap__text{
+      padding-left: 15px;
+      max-width: calc(100% - 100px);
+      flex: 0 0 calc(100% - 100px);
+    }
+  }
+}

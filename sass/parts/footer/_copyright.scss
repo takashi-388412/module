@@ -1,0 +1,19 @@
+.copyright{
+  line-height: 20px;
+  text-align: center;
+  padding: 20px ;
+  font-size: 12px;
+}
+
+.copyright--typeA{
+  background: $color_primary;
+  color:$color_primary_text;
+}
+
+.copyright--typeB{
+  border-top: 1px solid $color_border;
+}
+
+.copyright--typeC{
+  background: $color_highlight_bg;
+}

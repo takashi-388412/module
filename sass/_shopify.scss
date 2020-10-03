@@ -1,0 +1,126 @@
+@charset "utf-8";
+
+// ver0.3.2
+
+$device_mode: 'responsive'; // pc,sp,responsive
+
+/*================ Typography ================*/
+
+{% assign header_font = settings.type_header_font %}
+{% assign base_font = settings.type_base_font %}
+
+{{ header_font | font_face }}
+{{ base_font | font_face }}
+
+{%- assign base_font_bolder = base_font | font_modify: 'weight', 'bolder' -%}
+{%- assign base_font_bold = base_font | font_modify: 'weight', 'bold' -%}
+{%- assign base_font_italic = base_font | font_modify: 'style', 'italic' -%}
+{%- assign base_font_bold_italic = base_font_bold | font_modify: 'style', 'italic' -%}
+
+{{ base_font_bold | font_face }}
+{{ base_font_bolder | font_face }}
+{{ base_font_italic | font_face }}
+{{ base_font_bold_italic | font_face }}
+
+$font-weight-body--bold: {{ base_font_bold.weight | default: 700 }};
+$font-weight-body--bolder: {{ base_font_bolder.weight | default: 700 }};
+
+$font-stack-header: {{ header_font.family }}, {{ header_font.fallback_families }};
+$font-style-header: {{ header_font.style }};
+$font-weight-header: {{ header_font.weight }};
+
+$font-stack-body: {{ base_font.family }}, {{ base_font.fallback_families }};
+$font-style-body: {{ base_font.style }};
+$font-weight-body: {{ base_font.weight }};
+
+$font-size-header: {{ settings.type_header_base_size }} * 1px;
+
+$font-size-base: {{ settings.type_base_size }}px; // Henceforth known as 1em
+
+$font-stack-cart-notification: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+$font-size-mobile-input: 16px; // min 16px to prevent zooming
+
+$container: 1200; //コンテナ幅 ex) 1200,1000
+$base_font_size: 14; //ベースフォントサイズ ※単位：px ex) 14,12
+
+// 余白の設定
+$base_grid_margin: 15; //グリッドシステムの余白 30pxの場合は15と記述（PC）
+$sp_base_grid_margin: 7.5; //グリッドシステムの余白 14pxの場合は7と記述(SP)
+$pc_section_margin_bottom: 60; //セクションの下余白(PC)
+$sp_section_margin_bottom: 40; //セクションの下余白(SP)
+$sp_bezel: 15; //SPの画面左右余白
+
+
+// ブレイクポイントの設定
+$braekpoint_tab: 992;
+$braekpoint_sp1: 768;
+$braekpoint_sp2: 480;
+
+$header_fixed: 'true'; // ヘッダー固定
+
+$logo_width: 150;
+
+// 基本ボタンタイプ設定
+$button_type: 'A';
+$button_radius: 100; //丸ボタンの場合は「100」
+
+// カラム数
+$top_columns: 1; //TOPページのカラム数　1,2
+$under_columns: 2; //下層ページのカラム数　1,2
+
+// カラムサイズ
+$side_column_width: 250; //サイドカラムの横幅
+$main_column_width: 910; //メインカラムの横幅
+
+// ベースフォント
+$base_font_family: $font-stack-body;
+
+// 見出しフォント
+$heading_font_family: $font-stack-header;
+
+$color_body_bg:#FFF; //サイト背景
+$color_text: {{ settings.color_text }}; //サイト文字色
+
+$color_highlight_bg: #f2f2f2; //ハイライト
+$color_highlight_text: $color_text; //ハイライト文字色
+
+$color_primary:{{ settings.primary_color }}; //メインカラー
+$color_primary_text:{{ settings.primary_text_color }}; //メインカラー文字色
+
+$color_secondary:{{ settings.secondary_color }}; //サブカラー
+$color_secondary_text:{{ settings.secondary_text_color }}; //サブカラー文字色
+
+$color_cta: $color_primary; //メインカラー
+$color_cta_text:#ffffff; //メインカラー文字色
+
+$color_border:{{ settings.color_borders }}; //ボーダーカラー
+
+$color_white: #FFF;
+$color_black: #1b1b1b;
+
+$color_text_link:$color_text;
+
+
+// ボタン
+$color_button_text: {{ settings.color_button_text }};
+$color_button_text_hover: adaptiveColor({{ settings.color_image_overlay_text }}, {{ settings.color_image_overlay_text | color_brightness }});
+$color_button_bg: {{ settings.color_button }};
+$color_button_bg_hover: adaptiveColor({{ settings.color_button }}, {{ settings.color_button | color_brightness }});
+
+figure{
+  margin: 0;
+}
+
+.cateList--typeC figure {
+     max-width: 100% !important;
+}
+// .slick-slide,[class*="col"]{
+//   width: inherit !important;
+//   max-width: inherit !important;
+// }
+//
+// .cateList--typeC .slick-slide, .cateList--typeC [class*="col"]{
+//   width: inherit !important;
+//   max-width: inherit !important;
+// }

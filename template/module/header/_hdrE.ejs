@@ -1,0 +1,102 @@
+<%# PCの場合 %>
+<% if (deviceMode == 'pc') { %>
+  <header id="hdr" class="hdr--typeE">
+  <div class="hdrTop">
+    <div class="hdrInner">
+      <%- include('../../parts/header/_hdrInfoC') %>
+      <%- include('../../parts/header/_exNavA') %>
+    </div>
+  </div>
+  <div class="hdrMiddle hdrMiddle--logoLeft">
+    <div class="hdrInner">
+      <div class="hdrMiddle__left">
+        <h1 id="hdrLogo"><a href="/"><img class="gNav__listIcon" src="http://corekara.sub.jp/dummyLogo.svg" alt="" width="205" height="40"></a></h1>
+      </div>
+      <div class="hdrMiddle__middle">
+        <%- include('../../parts/header/_hdrInfoA') %>
+        <%- include('../../parts/header/_telAndTime') %>
+      </div>
+      <div class="hdrMiddle__right">
+        <%- include('../../parts/header/_iconNav') %>
+      </div>
+
+    </div>
+  </div>
+  <div class="hdrBottom hdrFixed hdrBottom--onlyNav">
+    <div class="hdrInner">
+      <%- include('../../parts/header/_gNavA') %>
+      <%- include('../../parts/general/_searchFormA') %>
+    </div>
+  </div>
+</header>
+
+<% } %>
+
+<%# SPの場合 %>
+<% if (deviceMode == 'sp') { %>
+  <header id="hdr" class="hdr--typeE">
+    <div class="hdrTop">
+      <div class="hdrInner">
+        <%- include('../../parts/header/_hdrInfoA') %>
+      </div>
+    </div>
+    <div class="hdrMiddle hdrMiddle--logoCenter hdrFixed">
+      <div class="hdrInner">
+        <div class="hdrMiddle__left">
+          <%- include('../../parts/header/_iconNavMenuB') %>
+        </div>
+        <h1 id="hdrLogo" class="hdrMiddle__center"><a href="/"><img class="gNav__listIcon" src="http://corekara.sub.jp/dummyLogo.svg" alt="" width="205" height="40"></a></h1>
+        <div class="hdrMiddle__right">
+          <%- include('../../parts/header/_iconNav') %>
+        </div>
+      </div>
+    </div>
+    <div class="hdrBottom">
+      <div class="hdrInner">
+        <%- include('../../parts/header/_categoryNavC') %>
+      </div>
+    </div>
+  </header>
+<% } %>
+
+<%# PCの場合 %>
+<% if (deviceMode == 'responsive') { %>
+  <header id="hdr" class="hdr--typeE">
+  <div class="hdrTop">
+    <div class="hdrInner">
+      <%- include('../../parts/header/_hdrInfoC') %>
+      <%- include('../../parts/header/_exNavA') %>
+    </div>
+  </div>
+  <div class="hdrMiddle hdrFixed hdrMiddle--logoLeft">
+    <div class="hdrInner">
+      <div class="hdrMiddle__left spOnly">
+        <%- include('../../parts/header/_iconNavMenuB') %>
+      </div>
+      <h1 id="hdrLogo" class="hdrMiddle__left">
+        <a href="/"><img class="gNav__listIcon" src="http://corekara.sub.jp/dummyLogo.svg" alt="" width="205" height="40"></a>
+      </h1>
+      <div class="hdrMiddle__middle pcOnly">
+        <%- include('../../parts/header/_hdrInfoA') %>
+        <%- include('../../parts/header/_telAndTime') %>
+      </div>
+      <div class="hdrMiddle__right">
+        <%- include('../../parts/header/_iconNav') %>
+      </div>
+
+    </div>
+  </div>
+  <div class="hdrBottom hdrBottom--onlyNav pcOnly">
+    <div class="hdrInner">
+      <%- include('../../parts/header/_gNavA') %>
+      <%- include('../../parts/general/_searchFormA') %>
+    </div>
+  </div>
+  <div class="hdrBottom spOnly">
+    <div class="hdrInner">
+      <%- include('../../parts/header/_categoryNavC') %>
+    </div>
+  </div>
+</header>
+
+<% } %>

@@ -1,0 +1,69 @@
+<%# PCの場合 %>
+<% if (deviceMode == 'pc') { %>
+  <header id="hdr" class="hdr--typeD">
+  <div class="hdrMiddle hdrMiddle--logoLeft">
+    <div class="hdrInner">
+      <h1 id="hdrLogo" class="hdrMiddle__left"><a href="/"><img class="gNav__listIcon" src="http://corekara.sub.jp/dummyLogo.svg" alt="" width="205" height="40"></a></h1>
+      <div class="hdrMiddle__center">
+        <%- include('../../parts/header/_gNavB') %>
+      </div>
+      <div class="hdrMiddle__right hdrMiddle__right--2">
+        <%- include('../../parts/general/_searchFormE') %>
+        <%- include('../../parts/header/_iconNav') %>
+      </div>
+
+    </div>
+  </div>
+</header>
+
+<% } %>
+
+<%# SPの場合 %>
+<% if (deviceMode == 'sp') { %>
+  <header id="hdr" class="hdr--typeD">
+    <div class="hdrTop">
+      <div class="hdrInner">
+        <%- include('../../parts/header/_hdrInfoA') %>
+      </div>
+    </div>
+    <div class="hdrMiddle hdrMiddle--logoCenter hdrFixed">
+      <div class="hdrInner">
+        <div class="hdrMiddle__left">
+          <%- include('../../parts/header/_iconNavMenuB') %>
+        </div>
+        <h1 id="hdrLogo" class="hdrMiddle__center"><a href="/"><img class="gNav__listIcon" src="http://corekara.sub.jp/dummyLogo.svg" alt="" width="205" height="40"></a></h1>
+        <div class="hdrMiddle__right">
+          <%- include('../../parts/header/_iconNav') %>
+        </div>
+      </div>
+    </div>
+    <div class="hdrBottom hdrBottom--onlyNav">
+      <div class="hdrInner">
+        <%- include('../../parts/general/_searchFormA') %>
+      </div>
+    </div>
+  </header>
+<% } %>
+
+<%# レスポンシブの場合 %>
+<% if (deviceMode == 'responsive') { %>
+  <header id="hdr" class="hdr--typeD">
+  <div class="hdrMiddle hdrMiddle--logoLeft">
+    <div class="hdrInner">
+      <div class="hdrMiddle__left spOnly">
+        <%- include('../../parts/header/_iconNavMenuB') %>
+      </div>
+      <h1 id="hdrLogo" class="hdrMiddle__left"><a href="/"><img class="gNav__listIcon" src="http://corekara.sub.jp/dummyLogo.svg" alt="" width="205" height="40"></a></h1>
+      <div class="hdrMiddle__center pcOnly">
+        <%- include('../../parts/header/_gNavB') %>
+      </div>
+      <div class="hdrMiddle__right hdrMiddle__right--2">
+        <div class="pcOnly"><%- include('../../parts/general/_searchFormE') %></div>
+        <%- include('../../parts/header/_iconNav') %>
+      </div>
+
+    </div>
+  </div>
+</header>
+
+<% } %>

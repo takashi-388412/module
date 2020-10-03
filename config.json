@@ -1,0 +1,38 @@
+{
+  "config": {
+    "page": {
+      "siteName": "ベースサイト",
+      "top": {
+        "title": "トップページ",
+        "keywords": "キーワード",
+        "description": "ディスクリプション",
+        "children": {
+          "company": {
+            "title": "会社概要",
+            "keywords": "キーワード",
+            "description": "ディスクリプション"
+          }
+        }
+      }
+    },
+    "lib": {
+      "js": {
+        "jquery.bxslider.js": false,
+        "jquery.sliderPro.js": true,
+        "jquery.swipebox.js": true,
+        "jquery.tile.js": true,
+        "skrollr.js": false,
+        "slick.js": true,
+        "wow.js": true,
+        "ofi.js": true,
+        "agent.js": true
+      },
+      "css": {
+        "normalize.css": true,
+        "responsive_gs.css": true,
+        "animate.css": true,
+        "ofi.css": true
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+<div class="dnone js-loginCheck">[LOGINTYPEZ]</div>
+<script>
+  $(function() {
+    var loginText = $(".js-loginCheck .loginText").text();
+    var loginCheck;
+    var memberName = $(".memberName").text();
+    if (loginText == "in") {
+      $(".js-member").each(function() {
+        $(this).removeClass("js-member");
+      });
+      $(".js-memberName").text(memberName);
+    } else if (loginText == "out") {
+      $(".js-guest").each(function() {
+        $(this).removeClass("js-guest");
+      });
+    }
+  });
+</script>
+
+
+<!-- ここからモジュールヘッダー -->
+<!-- ここまでモジュールヘッダー -->
+
+<script>
+// カートの中身が0でなければ指定したクラスの中に数量と中身をそれぞれ表示
+$(function(){
+  var cartText = $("#M_headBasketIn em").text();
+  cartText = cartText.replace(/点/,"");
+  if(cartText != "0" && cartText != ""){
+    $(".cartAmount").text(cartText);
+  }
+});
+</script>
+<div class="dnone js-cartNum">[CART_INSIDE1]</div>
+
+<div id="wrap">

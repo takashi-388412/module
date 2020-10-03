@@ -1,0 +1,133 @@
+<style>
+#container{
+    width:100%;
+    max-width: 100%;
+margin-top:0;
+}
+#side{
+    display: none;
+}
+#main{
+    width:100%;
+margin-top: -14px;
+}
+
+.footer{
+  margin-top:0;
+}
+</style>
+
+<!-- ここからトップモジュール -->
+<!-- ここまでトップモジュール -->
+
+
+<script type="text/javascript">
+// スライダーリサイズ対応
+//<![CDATA[
+$(function(){
+  $(window).on('load resize', function(){
+    var min_width = 1200;//最小widthを設定
+    var w = $(window).width();
+    if(w > min_width){
+        $('.eyecatch #M_slider li').css('width', w);
+        $('.eyecatch #M_slider li img').css('width', w);
+    }
+ });
+});
+//]]>
+</script>
+
+<script>
+$(function(){
+    $("#info table table tr td:nth-child(1)").each(function() {
+        var text = $(this).text().replace(/\//g,".").replace(/\[/g,"").replace(/\]/g,"");
+        $(this).text(text);
+    });
+});
+</script>
+<script>
+$(function(){
+  $(".js-moveItemList").each(function() {
+      $(this).find(".lims").each(function() {
+          $(this).children('table').wrap('<li class="itemList__unit"></li>').parents(".js-moveItemList").next(".js-includeItemList").append($(this).html());
+      });
+  });
+
+  $(".js-moveRecommend").each(function() {
+    var button = '';
+    if($(this).next('').hasClass('itemList--typeD')){
+      var button = '<span class="button arrow">詳しく見る</span>';
+    }
+      $(this).find('td[align="center"].lims').each(function() {
+        var href = $(this).find('a').attr('href');
+        var img = $(this).find('img').attr('src');
+        var text = $(this).find('tr.woong:nth-child(2) a').text();
+        var price = $(this).find('tr.woong:nth-child(3) td').text();
+        var html = '<li class="itemList__unit">' + '<a href="'+href+'" class="itemWrap"><img src="'+img+'" alt="商品画像" class="itemImg" /><p class="itemName">' + text + '</p><p class="itemPrice">' + price + '</p>'+button+'</a></li>';
+        $('.js-targetRecommend').append(html);
+      });
+  });
+  $(".js-moveItemList2").each(function() {
+      $(this).find('td[align="center"]').each(function() {
+        var href = $(this).find('a').attr('href');
+        var img = $(this).find('img').attr('src');
+        var text = $(this).next('.woong').html();
+        var html = '<li class="itemList__unit">' + '<a href="'+href+'"><img src="'+img+'" alt="" /></a>' + text + '</li>';
+        $('.js-includeItemList2').append(html);
+      });
+  });
+
+  $(".js-moveNewItems").each(function() {
+    var button = '';
+    if($(this).next('').hasClass('itemList--typeD')){
+      var button = '<span class="button arrow">詳しく見る</span>';
+    }
+      $(this).find('td[align="center"].lims').each(function() {
+        var href = $(this).find('a').attr('href');
+        var img = $(this).find('img').attr('src');
+        var text = $(this).find('tr.woong:nth-child(2) a').text();
+        var price = $(this).find('tr.woong:nth-child(3) td').text();
+        var html = '<li class="itemList__unit">' + '<a href="'+href+'" class="itemWrap"><img src="'+img+'" alt="商品画像" class="itemImg" /><p class="itemName">' + text + '</p><p class="itemPrice">' + price + '</p>'+button+'</a></li>';
+        $('.js-targetNewItems').append(html);
+      });
+  });
+});
+</script>
+<script>
+$(function(){
+  $(".js-more").each(function() {
+    var num = $(this).children('li').length;
+    if(num >= 6){
+      $(this).next().css('display', 'block');
+    }else{
+      $(this).next().css('display', 'none');
+    }
+  });
+  $(".js-moreBtn").click(function() {
+    $(this).parents('p').prev(".js-more").children('li').fadeIn("fast");
+    $(this).hide();
+    return false;
+  });
+});
+</script>
+
+<!-- TOPのみ　ロゴのh1化 -->
+<script>
+  $(function() {
+    $("#header__logo").replaceWith('<h1 id="header__logo" class="header__logo">'+$("#header__logo").html()+'</h1>');
+  });
+</script>
+
+<!-- メイクのお知らせの日付部分のカッコ削除 -->
+<script>
+  $(function() {
+    $('.makeNewsWrap td[width="80"]:first-child').each(function() {
+      var text = $(this).text();
+      text = text.replace("[", "");
+      text = text.replace("]", "");
+			$(this).text(text);
+    });
+  });
+</script>
+
+<div id="cateTextBase" class="dnone js-include--listPage"></div>

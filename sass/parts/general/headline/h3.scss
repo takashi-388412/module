@@ -1,0 +1,44 @@
+// 見出し
+// H2
+
+.h3A, .h3B, .h3C, .h3D, .h3E, .h3F, .h3G
+{
+  font-size: 18px;
+  line-height: 40px;
+  margin-bottom: 20px;
+  text-align: left;
+  letter-spacing: 3px;
+  font-weight: 700;
+}
+
+.h3B{
+  text-align: center;
+}
+
+.h3C{
+  padding-bottom: 5px;
+  border-bottom: 1px solid $color_border;
+}
+
+.h3D{
+  line-height: 1.6;
+  padding-left: 15px;
+  margin-bottom: 24px;
+  border-left: 5px solid $color_secondary;
+}
+
+.h3E{
+  padding-bottom: 5px;
+  border-bottom: 2px solid $color_border;
+  position: relative;
+  &:after{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 80px;
+    height: 2px;
+    background: $color_secondary;
+    bottom: -2px;
+    left: 0;
+  }
+}

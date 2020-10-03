@@ -1,0 +1,37 @@
+.hdrInfo{
+  margin-bottom: 0;
+  @if $device_mode != 'pc'{
+    @media (max-width: $braekpoint_sp1 - 1+px){
+      font-size: 12px;
+      text-align: center;
+    }
+  }
+  line-height: 30px;
+  *{
+    vertical-align: bottom;
+  }
+  img{
+    display: inline-block;
+    margin-right: 10px;
+  }
+  strong{
+    margin-right: 5px;
+    display: inline-block;
+    vertical-align: bottom;
+  }
+  i{
+    vertical-align: bottom;
+    line-height: 30px;
+    margin-right: 5px;
+    display: inline-block;
+  }
+}
+
+.telAndTime{
+  >div{
+    white-space: nowrap;
+    i{
+      margin-right: 5px;
+    }
+  }
+}

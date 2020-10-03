@@ -1,0 +1,31 @@
+.hdr--typeD {
+  .hdrTop{
+    background: $color_primary;
+    color: $color_primary_text;
+    .text--primary{
+      color: $color_primary_text !important;
+    }
+  }
+  .hdrMiddle{
+    .gNav > ul > li > a{
+      display: -ms-flex;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      >*{
+        max-width: 100%;
+        -webkit-box-flex: 0;
+            -ms-flex: 0 0 100%;
+                flex: 0 0 100%;
+      }
+    }
+  }
+  .hdrBottom{
+    background: $color_highlight_bg;
+  }
+}

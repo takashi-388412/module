@@ -1,0 +1,235 @@
+<!-- ここからフッターモジュール -->
+<footer id="ftr" class="ftr--typeB">
+  <div class="highlight p0">
+    <div class="fNav--typeA container">
+      <div class="row">
+        <nav class="col-pc-3 col-sp-6 col-sp2-12 fNav__list">
+          <h3>CATEGORIES</h3>
+          <ul>
+            <li><a href="#">トップス</a></li>
+            <li><a href="#">ボトムス</a></li>
+            <li><a href="#">バッグ</a></li>
+            <li><a href="#">キャップ</a></li>
+            <li><a href="#">アクセサリー</a></li>
+
+          </ul>
+        </nav>
+        <nav class="col-pc-3 col-sp-6 col-sp2-12 fNav__list">
+          <h3>CONTENTS</h3>
+          <ul>
+            <li><a href="#">お知らせ</a></li>
+            <li><a href="#">イベント情報</a></li>
+            <li><a href="#">セール情報</a></li>
+            <li><a href="#">コーディネート特集</a></li>
+            <li><a href="#">ブランド特集</a></li>
+          </ul>
+        </nav>
+        <nav class="col-pc-3 col-sp-6 col-sp2-12 fNav__list">
+          <h3>GUIDELINES</h3>
+          <ul>
+            <li><a href="#">ご利用ガイド</a></li>
+            <li><a href="#">お問い合わせ</a></li>
+            <li><a href="#">メールマガジン登録</a></li>
+            <li><a href="#">特定商取引法表示について</a></li>
+            <li><a href="#">プライバシーポリシー</a></li>
+          </ul>
+        </nav>
+        <div class="col-pc-3 col-sp-6 col-sp2-12">
+          <div class="fNav__logo">
+            <img class="" src="http://corekara.sub.jp/partslist/wp-content/uploads/module/dummyLogo.svg" alt="" width="205" height="40">
+          </div>
+          <ul class="snsNav">
+            <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="#"><i class="fab fa-line"></i></a></li>
+            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="copyright copyright--typeA">
+    &#169;2020 会社名 All rights reserved.
+  </div>
+
+</footer>
+<!-- ここまでフッターモジュール -->
+
+
+<!-- ここからJSモジュール -->
+<script>
+  var menuState = false;
+  var dropState = false;
+
+  $(document).ready(function() {
+    // 初期化
+    sNavOut('.header__nav');
+
+    // スライダー（slick）
+    $('.mainSlider').slick({
+      dots: true,
+      arrow:true,
+      infinite: true,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 5000,
+    });
+
+  });
+
+  // ハンバーガーメニュー展開
+  $(document).on('click', '.menuToggle', function() {
+    $('#drawer').toggleClass('open');
+    $('#overlay').toggleClass('open');
+    $('body').toggleClass('open');
+    return false;
+  });
+
+  $(document).on('click', '.menuClose', function() {
+    $('#drawer').removeClass('open');
+    $('#overlay').removeClass('open');
+    $('body').removeClass('open');
+    return false;
+  });
+
+  // SPのみアコーディオン
+  $(document).on('click', '.sp-toggle', function() {
+    var windowWidth = $(window).width();
+    console.log(windowWidth);
+    if(windowWidth < 768){
+      $(this).next('ul').slideToggle();
+      $(this).toggleClass('open');
+    }
+  });
+
+  $(document).on('click', '.hdrSearch--toggle > span,.hdrSearch--toggle > a', function() {
+    $(this).next().slideToggle();
+  });
+
+
+  // ナビゲーション　子要素展開
+  $('.hasChildren').hover(function(){
+      $(this).children('a').addClass('open');
+      $(this).children('ul,.megaMenu').addClass('open');
+  },function(){
+      $(this).children('a').removeClass('open');
+      $(this).children('ul,.megaMenu').removeClass('open');
+  });
+
+  $(document).on('click', '.hasChildren--click > a,.hasChildren--click > span', function() {
+    if(dropState == false){
+      $(this).addClass('open');
+      $(this).next('ul').addClass('open');
+      $(this).next('ul').slideDown();
+      dropState = true;
+    }else{
+      if($(this).hasClass('open')){
+        $(this).removeClass('open');
+        $(this).next('ul').removeClass('open');
+        $(this).next('ul').slideUp();
+      }else{
+        $(this).parents('li').parents('ul').parents('.gNav').find('.hasChilds > span').removeClass('open');
+        $(this).parents('li').parents('ul').parents('.gNav').find('.hasChilds > span').next('ul').removeClass('open');
+        $(this).parents('li').parents('ul').parents('.gNav').find('.hasChilds > span').next('ul').slideUp(0);
+        $(this).addClass('open');
+        $(this).next('ul').addClass('open');
+        $(this).next('ul').slideDown();
+      }
+    }
+    return false;
+  });
+
+
+  // ナビ固定
+  $(function(){
+      var target = $(".hdrFixed");
+      var h = target.height();
+      var h_top = target.offset().top;
+      target.after('<div class="h_box"></div>');
+      $(".h_box").height("0");
+      $(window).on('load scroll', function(event) {
+          var scroll = $(window).scrollTop();
+          if(scroll >= h_top){
+              target.css({
+                  position: 'fixed',
+                  top: '0px',
+                  width:'100%',
+                  'z-index':'999999'
+              });
+              $(".h_box").height(h);
+          }else{
+              target.css({
+                  position: ''
+              });
+              $(".h_box").height("0");
+          }
+      });
+  });
+
+
+  function sNavIn(_this) {
+    var windowWidthMinus = document.documentElement.clientWidth * -1;
+    $(_this).addClass('open');
+    $('.menuBg--close').addClass('open');
+    $(_this).css({
+      'left': 0
+    });
+  }
+
+  function sNavOut(_this) {
+    var windowWidthMinus = document.documentElement.clientWidth * -1;
+    $(_this).removeClass('open');
+    $('.menuBg--close').removeClass('open');
+    $(_this).css({
+      'left': windowWidthMinus
+    });
+  }
+
+  // タブ切り替え
+  $(function(){
+    $(".tabSwitch > li ").click(function() {
+      if(!$(this).hasClass('active')){
+        $(this).parents('.tabSwitch').find('li').removeClass('active');
+        $(this).addClass('active');
+
+        var tabNum = $(this).index();
+        $(this).parents(".tab").find(".tabContents").find(".tabContent").hide();
+        $(this).parents(".tab").find(".tabContents").find(".tabContent").eq(tabNum).fadeIn("500");
+      }
+    });
+  });
+
+  // スクロールボタン
+  $(window).load(function() {
+    if($('.mainSliderSec').length){
+      var position = $(".mainSliderSec + * ").offset().top;
+      $(".hdrFixed").outerHeight(); //最初の要素の、ドキュメント上での表示位置[y軸]を返す
+      $("#scrollBtn").click(function(){
+        console.log(position);
+        $("html,body").animate({
+          scrollTop : position // さっき変数に入れた位置まで
+        }, {
+          queue : false　// どれくらい経過してから、アニメーションを始めるか。キュー[待ち行列]。falseを指定すると、キューに追加されずに即座にアニメーションを実行。
+        });
+        return false;
+      });
+    }
+  });
+
+// テキスト横スクロール
+$('.textSlider').slick({
+  autoplay: false,
+  speed: 300,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  centerMode: false,
+  variableWidth: true,
+  touchMove: true,
+  swipeToSlide:true,
+  infinite:false
+});
+
+</script>
+<!-- ここまでJSモジュール -->

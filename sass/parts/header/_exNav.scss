@@ -1,0 +1,52 @@
+.exNav{
+  ul{
+    min-height: 40px;
+    display: -ms-flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+
+    li{
+      margin-right: 20px;
+      &:last-child{
+        margin-right: 0;
+      }
+      a{
+        position: relative;
+        display: block;
+        line-height: 1;
+        &:hover{
+          text-decoration: none;
+          color: $color_primary;
+        }
+      }
+    }
+  }
+
+  &.exNav--typeA{
+    ul li{
+      a{
+        padding-left: 20px;
+        &:after{
+          content: "";
+          left: 0;
+        }
+      }
+    }
+  }
+
+  &.exNav--typeB{
+    ul li{
+      &:not(:first-child){
+        padding-left: 20px;
+        border-left: 1px solid $color-text;
+      }
+    }
+  }
+}

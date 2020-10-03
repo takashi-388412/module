@@ -1,0 +1,352 @@
+//
+// ここからPCのみ
+//
+@if $device_mode == 'pc'{
+
+  .fNav--typeA{
+    padding-top: 40px;
+    padding-bottom: 40px;
+    .fNav__list{
+      h3{
+        line-height: 20px;
+        padding: 10px 0;
+        font-size: 16px;
+        border-bottom: 1px solid $color_border;
+        margin-bottom: 10px;
+      }
+      li{
+        line-height: 24px;
+        a:hover{color: $color_primary}
+
+      }
+    }
+    .fNav__logo{
+      text-align: right;margin-bottom: 30px;
+    }
+
+    .snsNav{
+      -webkit-box-pack: end;
+          -ms-flex-pack: end;
+              justify-content: flex-end;
+      li:last-child{margin-right: 0;}
+      i{
+        font-size: 30px;
+      }
+    }
+  }
+
+
+  .fNav--typeB{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    .fNav__logo{
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .fNav__list{
+      display: -ms-flex;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      li{
+        padding: 0 14px;
+        &:not(:last-child){
+          border-right: 1px solid $color_text;
+        }
+        a:after{
+          content: none !important;
+        }
+      }
+    }
+  }
+
+
+  .fNav__list{
+    list-style: none;
+    ul,li{
+      list-style: none;
+    }
+  }
+
+  .fNav--typeC{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: -ms-flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    .snsNav{
+      padding: 0 40px;
+    }
+    .fNav__list{
+      flex-grow: 2;
+      display: -ms-flex;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: end;
+          -ms-flex-pack: end;
+              justify-content: flex-end;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      li{
+        padding: 0 14px;
+        font-size: 12px;
+        &:not(:last-child){
+          border-right: 1px solid $color_text;
+        }
+        a:after{
+          content: none !important;
+        }
+      }
+    }
+  }
+
+
+  .fNav--typeD{
+    background: $color_primary;
+    padding: 20px 0;
+    .fNav__list{
+      a{
+        color: $color_primary_text;
+      }
+      display: -ms-flex;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      li{
+        padding: 0 20px;
+        line-height: 20px;
+        a:after{
+          content: none !important;
+        }
+      }
+    }
+  }
+
+//
+// ここからPC以外
+//
+}@else{
+  @media (min-width: $braekpoint_tab+px){
+    .fNav--typeA{
+      padding-top: 40px;
+      padding-bottom: 40px;
+      .fNav__list{
+        h3{
+          line-height: 20px;
+          padding: 10px 0;
+          font-size: 16px;
+          border-bottom: 1px solid $color_border;
+          margin-bottom: 10px;
+        }
+        li{
+          line-height: 24px;
+          a:hover{color: $color_primary}
+
+        }
+      }
+      .fNav__logo{
+        text-align: right;margin-bottom: 30px;
+      }
+
+      .snsNav{
+        -webkit-box-pack: end;
+            -ms-flex-pack: end;
+                justify-content: flex-end;
+        li:last-child{margin-right: 0;}
+        i{
+          font-size: 30px;
+        }
+      }
+    }
+
+
+    .fNav--typeB{
+      padding-top: 30px;
+      padding-bottom: 30px;
+      .fNav__logo{
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .fNav__list{
+        display: -ms-flex;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        li{
+          padding: 0 14px;
+          &:not(:last-child){
+            border-right: 1px solid $color_text;
+          }
+          a:after{
+            content: none !important;
+          }
+        }
+      }
+    }
+
+
+    .fNav__list{
+      list-style: none;
+      ul,li{
+        list-style: none;
+      }
+    }
+
+    .fNav--typeC{
+      padding-top: 20px;
+      padding-bottom: 20px;
+      display: -ms-flex;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      justify-content: space-between;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      .snsNav{
+        padding: 0 40px;
+      }
+      .fNav__list{
+        flex-grow: 2;
+        display: -ms-flex;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: end;
+            -ms-flex-pack: end;
+                justify-content: flex-end;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        li{
+          padding: 0 14px;
+          font-size: 12px;
+          &:not(:last-child){
+            border-right: 1px solid $color_text;
+          }
+          a:after{
+            content: none !important;
+          }
+        }
+      }
+    }
+
+
+    .fNav--typeD{
+      background: $color_primary;
+      padding: 20px 0;
+      .fNav__list{
+        a{
+          color: $color_primary_text;
+        }
+        display: -ms-flex;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        li{
+          padding: 0 20px;
+          line-height: 20px;
+          a:after{
+            content: none !important;
+          }
+        }
+      }
+    }
+
+  }
+
+  @media (max-width: $braekpoint_tab - 1+px){
+    [class*='fNav--type']:not(.fNav--typeA){
+      padding: 0;
+      background: $color_body_bg;
+      color: $color_text !important;
+      a{
+        color: $color_text !important;
+      }
+
+      .fNav__list{
+        display: block;
+        max-width: 100%;
+        border-top: 1px solid #dfdfdf;
+        li{
+          padding: 0;
+          a{
+            padding: 8px 20px;
+            line-height: 24px;
+            display: block;
+            border-bottom: 1px solid #dfdfdf;
+            font-weight: 500;
+          }
+          &:last-child{
+            a{
+              border-bottom: none;
+            }
+          }
+        }
+      }
+    }
+
+    .fNav--typeA{
+      padding-top: 10px;
+      .fNav__list{
+        h3{
+          font-size: 16px;
+          padding: 8px 0;
+          line-height: 24px;
+          border-bottom: 1px solid $color_border;
+          margin-bottom: 10px;
+          text-align: left;
+        }
+        ul{
+          li{
+            line-height: 24px;
+            text-align: left;
+          }
+        }
+      }
+      .fNav__logo{
+        text-align: center;
+        margin: 20px 0;
+      }
+      .snsNav{
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+
+}

@@ -1,0 +1,99 @@
+// 見出し
+// H2
+
+.h2A, .h2B, .h2C, .h2D, .h2E, .h2F, .h2G
+{
+  font-size: 24px;
+  line-height: 48px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 3px;
+  small{
+    font-size: 12px;
+    display: block;
+    text-align: center;
+    font-weight: normal;
+    line-height: 24px;
+    letter-spacing: 1px;
+  }
+  @if $device_mode != 'pc'{
+    @media (max-width: $braekpoint_sp2 - 1+px) {
+      font-size: 20px;
+      line-height: 36px;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.h2B{
+  position: relative;
+  padding-bottom: 10px;
+  &:after{
+    content: "";
+    position: absolute;
+    display: block;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: block;
+    width: 60px;
+    height: 2px;
+    background: $color_border;
+  }
+}
+
+.h2C,.h2E{
+  small,a{
+    color: $color_primary;
+  }
+  .arrow{
+    &:after{
+      border-color: $color_primary;
+      border-width: 2px;
+    }
+  }
+}
+
+
+.h2D{
+  span{
+    display: block;
+    text-align: center;
+    margin-top: 6px;
+    letter-spacing: 1px;
+    line-height: 24px;
+  }
+  small{
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 2px 10px;
+    color: $color_secondary_text;
+    background: $color_secondary;
+  }
+}
+
+.h2E{
+  small{
+    font-weight: bold;
+  }
+}
+
+.h2F{
+  padding-bottom: 10px;
+  text-align: left;
+  display: -ms-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  small{
+    margin-left: 20px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  border-bottom: 3px solid $color_primary;
+}

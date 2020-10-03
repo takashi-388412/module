@@ -1,0 +1,104 @@
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+
+<!-- ここからモジュールCSS読み込み -->
+<link rel="stylesheet" type="text/css" href="https://corekara.co.jp/wp-content/uploads/colorme/mainSP.css"/>
+<!-- ここまでモジュールCSS読み込み -->
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<!-- <script type="text/javascript" src="https://img.shop-pro.jp/s_tmpl_js/28/jquery-1.11.0.min.js"></script> -->
+<!-- <script type="text/javascript" src="js/product_stock.js"></script> -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+<!-- <script src="https://img.shop-pro.jp/s_tmpl_js/28/utils.js"></script> -->
+
+<!-- ここからヘッダーモジュール -->
+<!-- ここまでヘッダーモジュール -->
+
+<main id="main">
+  <{include file = $file_name}>
+
+  <!-- トップページの場合 -->
+  <{if $file_name|regex_replace:'/.*top\.tpl.*/i':'top.tpl' eq 'top.tpl'}>
+
+  <!-- トップページ以外の場合 -->
+  <{else}>
+    <!-- 最近チェックした商品 -->
+    <{if $history_num != 0}>
+    <section>
+      <div class="container">
+        <h2 class="h2A">最近チェックした商品</h2>
+        <ul class="itemList  itemList--typeA itemList-pc--4 itemList-sp--3">
+          <{section name=num loop=$history max=6 }>
+            <li class="itemList__unit">
+              <a href="<{$history[num].link_url}>" class="itemWrap">
+                <!-- 商品画像 -->
+                <{if $history[num].img_url != ""}>
+                  <img class="itemImg" src="http://corekara.sub.jp/partslist/wp-content/uploads/module/dummy800800.png" alt="<{$history[num].name}>の商品画像" >
+                <{else}>
+                  <img class="itemImg" src="https://img.shop-pro.jp/tmpl_img/67/m.gif" alt="<{$history[num].name}>の商品画像" >
+                <{/if}>
+
+                <!-- 商品名 -->
+                <p class="itemName"><{$history[num].name}></p>
+
+                <!-- 定価 -->
+                <{if $members_login_flg == true && $history[num].discount_flg == true}>
+                  <p class="itemPrice__regular"><{$history[num].regular_price}></p>
+                <{/if}>
+
+                <!-- 商品価格 -->
+                <p class="itemPrice"><{$history[num].price}></p>
+                <span class="itemPrice__discount"><{if $members_login_flg == true && $history[num].discount_flg == true}><{$history[num].discount_rate}>OFF!!<{/if}></span>
+
+              </a>
+            </li><!--itemList__unit-->
+          <{/section}>
+        </ul>
+      </div>
+    </section>
+    <{/if}>
+  <{/if}>
+
+</main>
+
+
+<!-- ここからフッターモジュール -->
+<!-- ここまでフッターモジュール -->
+
+<!-- ここからJSモジュール -->
+<!-- ここまでJSモジュール -->
+
+<script>
+  /////// カラーミーモーダルウィンドウ ///////
+$(function(){
+  $(".u-open--modal").click(function(){
+    $("#modal__overlay").addClass("open");
+    $("#modal__content").fadeIn("fast");
+    centeringModalSyncer();
+    $(".u-close--modal,#modal__overlay").click(function(){
+      $("#modal__content").fadeOut("fast");
+      $("#modal__overlay").removeClass("open");
+    });
+  });
+
+  $(window).resize(centeringModalSyncer);
+
+  function centeringModalSyncer(){
+    var w = $(window).width();
+    var h = $(window).height();
+    var cw = $("#modal__content").outerWidth(true);
+    var ch = $("#modal__content").outerHeight(true);
+    var left = ((w - cw)/2);
+    var top = ((h - ch)/2);
+    if (ch >= h) {
+      top = $(window).scrollTop() + 40;
+      $("#modal__content").css({"left": left + "px","top": top + "px","position": "absolute"});
+    } else {
+      $("#modal__content").css({"left": left + "px","top": top + "px","position": "fixed"});
+    };
+  }
+});
+</script>

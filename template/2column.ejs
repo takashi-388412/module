@@ -1,0 +1,49 @@
+<%# ここから初期設定 %>
+<% deviceMode = 'pc'; %> <!-- pc,sp,responsive -->
+<%# ここまで初期設定 %>
+
+<%- include('./module/_head', {body:'home'}) %>
+<%- include('./module/header/_hdrB', {param:'param'}) %>
+
+<%- include('./module/topMain/_mainSliderA') %>
+
+<div id="container">
+  <%- include('side', {body:'home'}) %>
+
+  <main id="main">
+
+    <section>
+        <%- include('./module/articleList/_newsListB') %>
+    </section>
+
+    <section>
+        <h2 class="h2D">特集<span><small>CONTENTS</small></span></h2>
+        <%- include('./module/articleList/_articleListD') %>
+    </section>
+
+    <section>
+        <h2 class="h2D">カテゴリーから探す<span><small>CATEGORY LIST</small></span></h2>
+        <%- include('./module/bnr/_cateListA') %>
+    </section>
+
+    <section>
+        <h2 class="h2C">カテゴリーから探す<span><small>CATEGORY LIST</small></span></h2>
+        <%- include('./module/bnr/_cateListC') %>
+    </section>
+
+    <section>
+        <h2 class="h2D">新着商品<span><small>NEW ITEMS</small></span></h2>
+        <%- include('./module/itemList/_itemListB') %>
+    </section>
+
+    <%- include('./module/contents/_conceptD--2column') %>
+
+    <section>
+        <h2 class="h2D">ブログ<span><small>BLOG</small></span></h2>
+        <%- include('./module/articleList/_articleListB') %>
+    </section>
+
+  </main>
+</div>
+
+<%- include('./module/footer/_ftrC', {param:'param'}) %>

@@ -1,0 +1,426 @@
+<!-- ここからトップモジュール -->
+
+<section class="mainSliderSec">
+  <div class="mainSliderSec__inner">
+    <ul class="mainSlider">
+      <li><img src="http://corekara.sub.jp/partslist/wp-content/uploads/module/slider1.png" alt="" /></li>
+      <li><img src="http://corekara.sub.jp/partslist/wp-content/uploads/module/slider2.png" alt="" /></li>
+      <li><img src="http://corekara.sub.jp/partslist/wp-content/uploads/module/slider1.png" alt="" /></li>
+      <li><img src="http://corekara.sub.jp/partslist/wp-content/uploads/module/slider2.png" alt="" /></li>
+    </ul>
+    <a href="#" id="scrollBtn">SCROLL</a>
+  </div>
+</section>
+
+
+<section>
+  <div class="container">
+    <h2 class="h2D">お知らせ<span><small>INFORMATION</small></span></h2>
+    <div class="row">
+  <div class="col-sp-12 col-pc-6">
+    <ul class="newsList newsList--typeA">
+      <li>
+        <time data-time="2020-01-09">2020.01.09</time>
+        <h3><a href="#">最大50%OFF！ おトクなサマーセールを開催中！</a></h3>
+      </li>
+      <li>
+        <time data-time="2020-01-09">2020.01.09</time>
+        <h3><a href="#">最大50%OFF！ おトクなサマーセールを開催中！</a></h3>
+      </li>
+      <li>
+        <time data-time="2020-01-09">2020.01.09</time>
+        <h3><a href="#">最大50%OFF！ おトクなサマーセールを開催中！</a></h3>
+      </li>
+      <li>
+        <time data-time="2020-01-09">2020.01.09</time>
+        <h3><a href="#">最大50%OFF！ おトクなサマーセールを開催中！</a></h3>
+      </li>
+    </ul>
+  </div>
+  <div class="col-sp-12 col-pc-6">
+    <a href="" class="newsBnr">
+      <img src="http://corekara.sub.jp/partslist/wp-content/uploads/module/dummy585.png" >
+    </a>
+  </div>
+</div>
+
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2 class="h2D">売れ筋商品<span><small>ITEM RANKING</small></span></h2>
+    <div class="tab tab--typeB">
+      <ul class="tabSwitch scrollX">
+        <li class="active"><span>トップス</span></li>
+        <li class=""><span>ボトムス</span></li>
+        <li class=""><span>アクセサリー</span></li>
+        <li class=""><span>シューズ</span></li>
+        <li class=""><span>シューズ</span></li>
+        <li class=""><span>シューズ</span></li>
+      </ul>
+      <div class="tabContents">
+        <div class="tabContent active">
+          <ul class="itemList itemList--ranking itemList--typeC itemList-pc--4 itemList-sp--2">
+            <{section name=i loop=$ranking_product.list max=4}>
+              <li class="itemList__unit">
+                <a href="<{$ranking_product.list[i].url}>" class="itemWrap">
+                  <img class="itemImg" src="<{$ranking_product.list[i].image}>" alt="<{$ranking_product.list[i].name}>" >
+                  <p class="itemName"><{$ranking_product.list[i].name}></p>
+                  <p class="itemPrice"><{$ranking_product.list[i].price}>円<!-- <small>(税込)</small> --></p>
+                </a>
+              </li>
+            <{/section}>
+          </ul>
+        </div>
+        <div class="tabContent">
+          <ul class="itemList itemList--ranking itemList--typeC itemList-pc--4 itemList-sp--2">
+            <li class="itemList__unit">
+              <a href="#" class="itemWrap">
+                <img class="itemImg" src="http://corekara.sub.jp/partslist/wp-content/uploads/module/dummy800800.png" border="0" alt="商品が入ります" width="100" align="center" valign="absmiddle">
+                <p class="itemName">商品が入ります</p>
+                <p class="itemPrice">10,000円<small>(税込)</small></p>
+              </a>
+            </li>
+            <li class="itemList__unit">
+              <a href="#" class="itemWrap">
+                <img class="itemImg" src="http://corekara.sub.jp/partslist/wp-content/uploads/module/dummy800800.png" border="0" alt="商品が入ります" width="100" align="center" valign="absmiddle">
+                <p class="itemName">商品が入ります</p>
+                <p class="itemPrice">10,000円<small>(税込)</small></p>
+              </a>
+            </li>
+            <li class="itemList__unit">
+              <a href="#" class="itemWrap">
+                <img class="itemImg" src="http://corekara.sub.jp/partslist/wp-content/uploads/module/dummy800800.png" border="0" alt="商品が入ります" width="100" align="center" valign="absmiddle">
+                <p class="itemName">商品が入ります</p>
+                <p class="itemPrice">10,000円<small>(税込)</small></p>
+              </a>
+            </li>
+            <li class="itemList__unit">
+              <a href="#" class="itemWrap">
+                <img class="itemImg" src="http://corekara.sub.jp/partslist/wp-content/uploads/module/dummy800800.png" border="0" alt="商品が入ります" width="100" align="center" valign="absmiddle">
+                <p class="itemName">商品が入ります</p>
+                <p class="itemPrice">10,000円<small>(税込)</small></p>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="tabContent">
+          <ul class="itemList itemList--ranking itemList--typeC itemList-pc--4 itemList-sp--2">
+            <li class="itemList__unit">
+              <a href="#" class="itemWrap">
+                <img class="itemImg" src="http://corekara.sub.jp/partslist/wp-content/uploads/module/dummy800800.png" border="0" alt="商品が入ります" width="100" align="center" valign="absmiddle">
+                <p class="itemName">商品が入ります</p>
+                <p class="itemPrice">10,000円<small>(税込)</small></p>
+              </a>
+            </li>
+            <li class="itemList__unit">
+              <a href="#" class="itemWrap">
+                <img class="itemImg" src="http://corekara.sub.jp/partslist/wp-content/uploads/module/dummy800800.png" border="0" alt="商品が入ります" width="100" align="center" valign="absmiddle">
+                <p class="itemName">商品が入ります</p>
+                <p class="itemPrice">10,000円<small>(税込)</small></p>
+              </a>
+            </li>
+            <li class="itemList__unit">
+              <a href="#" class="itemWrap">
+                <img class="itemImg" src="http://corekara.sub.jp/partslist/wp-content/uploads/module/dummy800800.png" border="0" alt="商品が入ります" width="100" align="center" valign="absmiddle">
+                <p class="itemName">商品が入ります</p>
+                <p class="itemPrice">10,000円<small>(税込)</small></p>
+              </a>
+            </li>
+            <li class="itemList__unit">
+              <a href="#" class="itemWrap">
+                <img class="itemImg" src="http://corekara.sub.jp/partslist/wp-content/uploads/module/dummy800800.png" border="0" alt="商品が入ります" width="100" align="center" valign="absmiddle">
+                <p class="itemName">商品が入ります</p>
+                <p class="itemPrice">10,000円<small>(税込)</small></p>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="tabContent">
+          <ul class="itemList itemList--ranking itemList--typeC itemList-pc--4 itemList-sp--2">
+            <li class="itemList__unit">
+              <a href="#" class="itemWrap">
+                <img class="itemImg" src="http://corekara.sub.jp/partslist/wp-content/uploads/module/dummy800800.png" border="0" alt="商品が入ります" width="100" align="center" valign="absmiddle">
+                <p class="itemName">商品が入ります</p>
+                <p class="itemPrice">10,000円<small>(税込)</small></p>
+              </a>
+            </li>
+            <li class="itemList__unit">
+              <a href="#" class="itemWrap">
+                <img class="itemImg" src="http://corekara.sub.jp/partslist/wp-content/uploads/module/dummy800800.png" border="0" alt="商品が入ります" width="100" align="center" valign="absmiddle">
+                <p class="itemName">商品が入ります</p>
+                <p class="itemPrice">10,000円<small>(税込)</small></p>
+              </a>
+            </li>
+            <li class="itemList__unit">
+              <a href="#" class="itemWrap">
+                <img class="itemImg" src="http://corekara.sub.jp/partslist/wp-content/uploads/module/dummy800800.png" border="0" alt="商品が入ります" width="100" align="center" valign="absmiddle">
+                <p class="itemName">商品が入ります</p>
+                <p class="itemPrice">10,000円<small>(税込)</small></p>
+              </a>
+            </li>
+            <li class="itemList__unit">
+              <a href="#" class="itemWrap">
+                <img class="itemImg" src="http://corekara.sub.jp/partslist/wp-content/uploads/module/dummy800800.png" border="0" alt="商品が入ります" width="100" align="center" valign="absmiddle">
+                <p class="itemName">商品が入ります</p>
+                <p class="itemPrice">10,000円<small>(税込)</small></p>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+<section>
+  <div class="container">
+    <h2 class="h2D">特集<span><small>CONTENTS</small></span></h2>
+    <ul class="articleList articleList--typeD radius row">
+  <li class="col-sp-12 col-pc-6">
+    <a href="#" class="articleList__wrap">
+      <img class="articleList__img" src="http://corekara.sub.jp/partslist/wp-content/uploads/module/dummy800800.png" border="0" alt="商品が入ります">
+      <span class="articleList__text">
+        <h3 class="articleList__title">最大50%OFF！ おトクなサマーセールを開催中！</h3>
+        <p class="articleList__content">記事本文が入ります。記事本文が入ります。</p>
+        <time class="articleList__date">2020.02.01</time>
+      </span>
+    </a>
+  </li>
+  <li class="col-sp-12 col-pc-6">
+    <a href="#" class="articleList__wrap">
+      <img class="articleList__img" src="http://corekara.sub.jp/partslist/wp-content/uploads/module/dummy800800.png" border="0" alt="商品が入ります">
+      <span class="articleList__text">
+        <h3 class="articleList__title">最大50%OFF！ おトクなサマーセールを開催中！</h3>
+        <p class="articleList__content">記事本文が入ります。記事本文が入ります。</p>
+        <time class="articleList__date">2020.02.01</time>
+      </span>
+    </a>
+  </li>
+  <li class="col-sp-12 col-pc-6">
+    <a href="#" class="articleList__wrap">
+      <img class="articleList__img" src="http://corekara.sub.jp/partslist/wp-content/uploads/module/dummy800800.png" border="0" alt="商品が入ります">
+      <span class="articleList__text">
+        <h3 class="articleList__title">最大50%OFF！ おトクなサマーセールを開催中！</h3>
+        <p class="articleList__content">記事本文が入ります。記事本文が入ります。</p>
+        <time class="articleList__date">2020.02.01</time>
+      </span>
+    </a>
+  </li>
+  <li class="col-sp-12 col-pc-6">
+    <a href="#" class="articleList__wrap">
+      <img class="articleList__img" src="http://corekara.sub.jp/partslist/wp-content/uploads/module/dummy800800.png" border="0" alt="商品が入ります">
+      <span class="articleList__text">
+        <h3 class="articleList__title">最大50%OFF！ おトクなサマーセールを開催中！</h3>
+        <p class="articleList__content">記事本文が入ります。記事本文が入ります。</p>
+        <time class="articleList__date">2020.02.01</time>
+      </span>
+    </a>
+  </li>
+</ul>
+
+  </div>
+</section>
+
+<section class="highlight">
+  <div class="container">
+    <h2 class="h2D">カテゴリーから探す<span><small>CATEGORY LIST</small></span></h2>
+    <div class="row cateList">
+  <div class="col-sp-6 col-pc-3">
+    <a href="#" class="iconButton">
+      <span><img src="http://corekara.sub.jp/partslist/wp-content/uploads/module/dummy585.png" class="bnr"></span>
+      <span>カテゴリー名カテゴリー名</span>
+    </a>
+  </div>
+  <div class="col-sp-6 col-pc-3">
+    <a href="#" class="iconButton">
+      <span><img src="http://corekara.sub.jp/partslist/wp-content/uploads/module/dummy585.png" class="bnr"></span>
+      <span>カテゴリー名カテゴリー名</span>
+    </a>
+  </div>
+  <div class="col-sp-6 col-pc-3">
+    <a href="#" class="iconButton">
+      <span><img src="http://corekara.sub.jp/partslist/wp-content/uploads/module/dummy585.png" class="bnr"></span>
+      <span>カテゴリー名カテゴリー名</span>
+    </a>
+  </div>
+  <div class="col-sp-6 col-pc-3">
+    <a href="#" class="iconButton">
+      <span><img src="http://corekara.sub.jp/partslist/wp-content/uploads/module/dummy585.png" class="bnr"></span>
+      <span>カテゴリー名カテゴリー名</span>
+    </a>
+  </div>
+  <div class="col-sp-6 col-pc-3">
+    <a href="#" class="iconButton">
+      <span><img src="http://corekara.sub.jp/partslist/wp-content/uploads/module/dummy585.png" class="bnr"></span>
+      <span>カテゴリー名カテゴリー名</span>
+    </a>
+  </div>
+  <div class="col-sp-6 col-pc-3">
+    <a href="#" class="iconButton">
+      <span><img src="http://corekara.sub.jp/partslist/wp-content/uploads/module/dummy585.png" class="bnr"></span>
+      <span>カテゴリー名カテゴリー名</span>
+    </a>
+  </div>
+  <div class="col-sp-6 col-pc-3">
+    <a href="#" class="iconButton">
+      <span><img src="http://corekara.sub.jp/partslist/wp-content/uploads/module/dummy585.png" class="bnr"></span>
+      <span>カテゴリー名カテゴリー名</span>
+    </a>
+  </div>
+  <div class="col-sp-6 col-pc-3">
+    <a href="#" class="iconButton">
+      <span><img src="http://corekara.sub.jp/partslist/wp-content/uploads/module/dummy585.png" class="bnr"></span>
+      <span>カテゴリー名カテゴリー名</span>
+    </a>
+  </div>
+</div>
+
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2 class="h2D">オススメ商品<span><small>RECOMMENDED ITEMS</small></span></h2>
+    <ul class="itemList itemList--typeD itemList-pc--4 itemList-sp--2 js-includeList">
+    </ul>
+    <div class="dnone js-moveList">
+			<{$recommend_html}>
+		</div>
+
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2 class="h2D">新着商品<span><small>NEW ITEMS</small></span></h2>
+    <ul class="itemList itemList--typeD itemList-pc--4 itemList-sp--2 js-includeList">
+      <!-- <li class="itemList__unit">
+        <a href="#" class="itemWrap">
+          <img class="itemImg" src="http://corekara.sub.jp/partslist/wp-content/uploads/module/dummy800800.png" border="0" alt="商品が入ります" width="100" align="center" valign="absmiddle">
+          <p class="itemName">商品が入ります</p>
+          <p class="itemPrice">10,000円<small>(税込)</small></p>
+          <span class="button arrow">詳細を見る</span>
+        </a>
+      </li> -->
+    </ul>
+    <div class="dnone js-moveList">
+			<{$newitem_html}>
+		</div>
+
+  </div>
+</section>
+
+
+<section class="conceptA">
+  <img src="http://corekara.sub.jp/partslist/wp-content/uploads/module/bg.jpg" alt="" class="conceptA__bg">
+  <div class="container">
+    <h2 class="h2C">CONCEPT<small>コンセプト</small></h2>
+    <p class="text--center">
+      テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。<br>
+      テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。<br>
+      テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。<br>
+      テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。<br>
+      テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+    </p>
+    <p class="text--center">
+      <a href="#" class="button arrow">詳しく見る</a>
+    </p>
+  </div>
+</section>
+
+
+<section>
+  <div class="container">
+    <h2 class="h2D">ブログ<span><small>BLOG</small></span></h2>
+    <ul class="articleList articleList--typeB row">
+  <li class="col-sp-6 col-pc-3">
+    <a href="#" class="articleList__wrap">
+      <img class="articleList__img" src="http://corekara.sub.jp/partslist/wp-content/uploads/module/dummy800800.png" border="0" alt="商品が入ります">
+      <span class="articleList__text">
+        <h3 class="articleList__title">最大50%OFF！ おトクなサマーセールを開催中！</h3>
+        <time class="articleList__date">2020.02.01</time>
+      </span>
+    </a>
+  </li>
+  <li class="col-sp-6 col-pc-3">
+    <a href="#" class="articleList__wrap">
+      <img class="articleList__img" src="http://corekara.sub.jp/partslist/wp-content/uploads/module/dummy800800.png" border="0" alt="商品が入ります">
+      <span class="articleList__text">
+        <h3 class="articleList__title">最大50%OFF！ おトクなサマーセールを開催中！</h3>
+        <time class="articleList__date">2020.02.01</time>
+      </span>
+    </a>
+  </li>
+  <li class="col-sp-6 col-pc-3">
+    <a href="#" class="articleList__wrap">
+      <img class="articleList__img" src="http://corekara.sub.jp/partslist/wp-content/uploads/module/dummy800800.png" border="0" alt="商品が入ります">
+      <span class="articleList__text">
+        <h3 class="articleList__title">最大50%OFF！ おトクなサマーセールを開催中！</h3>
+        <time class="articleList__date">2020.02.01</time>
+      </span>
+    </a>
+  </li>
+  <li class="col-sp-6 col-pc-3">
+    <a href="#" class="articleList__wrap">
+      <img class="articleList__img" src="http://corekara.sub.jp/partslist/wp-content/uploads/module/dummy800800.png" border="0" alt="商品が入ります">
+      <span class="articleList__text">
+        <h3 class="articleList__title">最大50%OFF！ おトクなサマーセールを開催中！</h3>
+        <time class="articleList__date">2020.02.01</time>
+      </span>
+    </a>
+  </li>
+</ul>
+
+  </div>
+</section>
+<!-- ここまでトップモジュール -->
+
+<script>
+$(function(){
+    // 自動出力一覧調整
+    $(".js-moveList ul").each(function() {
+        $(this).find("li").addClass('itemList__unit').find("a").addClass('itemList__link');
+        $(this).parents(".js-moveList").prev(".js-includeList").append($(this).html());
+    });
+    // 自動出力一覧調整--スライド
+    $.when(
+      $(".js-moveList--slide ul").each(function() {
+          $(this).find("li").addClass('itemList__unit slide').find("a").addClass('itemList__link slide-inner'),
+          $(this).parents(".js-moveList--slide").prev(".js-includeList--slide").append($(this).html())
+      })
+    )
+    .done(function(data_a, data_b) {
+      $('.itemList--slide').slick({
+        speed: 300,
+        arrows: false,
+        infinite: false,
+        slidesToShow: 2.5,
+        slidesToScroll: 2
+      });
+    });
+    // moreボタンがあるsection(.js-moreWrap)の中にある.js-moreクラスのついたulの中にliが7つ以上あればmoreボタン表示
+    $(".js-moreBtn").each(function() {
+        var more = $(this).parents(".js-moreWrap").find('.js-more').find('li').length;
+        if(more >= 7){
+            $(this).parents(".moreBtnWrap").show();
+        }
+    });
+});
+</script>
+
+<script>
+//moreボタン、7つ以上あった場合ボタン表示、クリックで追加分表示
+$(function(){
+  $(".js-moreBtn").click(function() {
+    $(this).parents(".js-moreWrap").find(".js-more").children('li').fadeIn("fast");
+    $(this).hide();
+    $(".tabAllWrap").height("auto");
+    return false;
+  });
+});
+</script>

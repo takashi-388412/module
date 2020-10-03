@@ -1,0 +1,36 @@
+.hdr__catNavC{
+  width: 100%;
+}
+// ul.textSlider{
+.spSwiper{
+  padding: 8px 15px;
+  width: 100%;
+  margin-bottom: 0;
+  li{
+    white-space: nowrap;
+    margin-right: 20px;
+    line-height: 24px;
+    font-weight: 500;
+    font-size: 12px;
+  }
+  .slick-prev{
+    left: 0px;
+    transform: translateY(-50%) rotate(-135deg);
+  }
+  .slick-next{
+    right: 0px;
+    transform: translateY(-50%) rotate(45deg);
+  }
+
+  .slick-prev,
+  .slick-next{
+    &:before{
+      content: none !important;
+    }
+    border-top: 1px solid $color_text;
+    border-right: 1px solid $color_text;
+    height: 8px;
+    width: 8px;
+  }
+
+}

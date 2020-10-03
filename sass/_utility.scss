@@ -1,0 +1,157 @@
+.highlight{
+  background: $color_highlight_bg;
+  padding: 60px 0;
+  @media (max-width: 767px) {
+    padding: 40px 0;
+  }
+}
+
+.reverse{
+  &.row{
+    -webkit-box-orient : horizontal;
+    -webkit-box-direction : reverse;
+        -ms-flex-direction : row-reverse;
+            flex-direction : row-reverse
+  }
+}
+
+// テキスト関連
+.text-center,.text--center{
+  text-align: center !important;
+}
+.text--right{
+  text-align: right !important;
+}
+.text--left{
+  text-align: left !important;
+}
+
+h2.text--right span,
+h2.text--right small{
+  text-align: right !important;
+}
+h2.text--left span,
+h2.text--left small{
+  text-align: left !important;
+}
+@media screen and (min-width: 768px){
+  .pc--text--center{
+    text-align: center;
+  }
+  .pc--text--right{
+    text-align: right;
+  }
+  .pc--text--left{
+    text-align: left;
+  }
+}
+.text--primary{
+  color:$color_primary !important;
+}
+.text--secondary{
+  color:$color_secondary !important;
+}
+
+.text--white{
+  color:$color_white !important;
+}
+.text--xxxlarge{
+  font-size: 32px;
+}
+.text--xxlarge{
+  font-size: 24px;
+}
+.text--xlarge{
+  font-size: 18px;
+}
+.text--large{
+  font-size: 16px;
+}
+.text--small{
+  font-size: 12px;
+}
+.text--xsmall{
+  font-size: 12px;
+}
+@media screen and (max-width: 767px){
+
+  .text--xxxlarge{
+    font-size: 24px;
+  }
+  .text--xxlarge{
+    font-size: 20px;
+  }
+
+}
+
+.mincho,
+.text--serif{
+  font-family: 'Noto Serif JP', "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif !important;
+}
+
+.flex-center,
+.tab--typeB .tabSwitch,
+.tab--typeC .tabSwitch,
+.iconNav__cart .cartAmount
+{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  .flex-center__inner{
+    display: block;
+    width: 100%;
+  }
+}
+
+.alignCenter,
+.newsList li,
+a.iconButton,
+.iconButton,
+.newsList--typeB,
+.tab--typeA .tabSwitch li,
+.hdr--typeE .hdrMiddle__middle,
+.hdr--typeE .hdrBottom .hdrInner,
+.telAndTime > div
+{
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-box-align:center;
+      -ms-flex-align:center;
+          align-items:center;
+}
+
+// マージン関連
+.mb0{
+  margin-bottom: 0 !important;
+}
+.mb15{
+  margin-bottom: 15px !important;
+}
+.mb30{
+  margin-bottom: 30px !important;
+}
+
+.mt0{
+  margin-top: 0 !important;
+}
+.mt15{
+  margin-top: 15px !important;
+}
+.mt30{
+  margin-top: 30px !important;
+}
+
+.dnone{
+    display: none;
+}
+
+.p0{
+  padding: 0;
+}

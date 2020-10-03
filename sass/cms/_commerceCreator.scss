@@ -1,0 +1,550 @@
+a:visited{
+  color: $color_text;
+}
+
+
+@if $device_mode == 'pc'{
+  .fs-l-page {
+    min-width: 1220px;
+    overflow: hidden;
+  }
+}@else{
+  .fs-l-page {
+    overflow: hidden;
+  }
+}
+
+.fs-trial-header {
+    display: none !important;
+}
+
+.member.my-false { display: none !important; }
+.guest.my-true { display: none !important; }
+
+/* CV関連ページのサブカラム非表示 */
+/* ↓メインおよびサブカラムのクラス名に応じて必ず調整↓ */
+.fs-body-checkout .fs-l-pageMain,
+.fs-body-cart .fs-l-pageMain,
+.fs-body-checkout-success .fs-l-pageMain,
+.fs-body-checkout-multiAddress-options .fs-l-pageMain,
+.fs-body-checkout-multiAddress-confirm .fs-l-pageMain,
+.fs-body-checkout-multiAddress-products .fs-l-pageMain,
+.fs-body-checkout-multiAddress .fs-l-pageMain,
+.fs-body-checkout-multi .fs-l-pageMain,
+.fs-body-customerDetails .fs-l-pageMain,
+.fs-body-checkout-amazon .fs-l-pageMain,
+.fs-body-my-addressbook-new .fs-l-pageMain,
+.fs-body-cart-login .fs-l-pageMain{
+  width: 100%;
+  max-width: 100%;
+  float: none;
+}
+.fs-body-checkout #side,
+.fs-body-cart #side,
+.fs-body-checkout-success #side,
+.fs-body-checkout-multiAddress-options #side,
+.fs-body-checkout-multiAddress-confirm #side,
+.fs-body-checkout-multiAddress-products #side,
+.fs-body-checkout-multiAddress #side,
+.fs-body-checkout-multi #side,
+.fs-body-customerDetails #side,
+.fs-body-checkout-amazon #side,
+.fs-body-my-addressbook-new #side,
+.fs-body-cart-login #side{
+  display: none !important;
+}
+
+.fs-body-checkout .fs-l-sideArea,
+.fs-body-cart .fs-l-sideArea,
+.fs-body-checkout-success .fs-l-sideArea,
+.fs-body-checkout-multiAddress-options .fs-l-sideArea,
+.fs-body-checkout-multiAddress-confirm .fs-l-sideArea,
+.fs-body-checkout-multiAddress-products .fs-l-sideArea,
+.fs-body-checkout-multiAddress .fs-l-sideArea,
+.fs-body-checkout-multi .fs-l-sideArea,
+.fs-body-customerDetails .fs-l-sideArea,
+.fs-body-checkout-amazon .fs-l-sideArea,
+.fs-body-my-addressbook-new .fs-l-sideArea,
+.fs-body-cart-login .fs-l-sideArea{
+  display: none !important;
+}
+/* //CV関連ページのサブカラム非表示 */
+
+/*  　　　　　　　　*/
+/* ヘッダー */
+/*  　　　　　　　　*/
+.fs-l-header {
+    display: block;
+    padding-top: 0;
+}
+
+/*  　　　　　　　　*/
+/* ボタン関連調整 */
+/*  　　　　　　　　*/
+
+.fs-c-button--primary {
+  font-size: 18px;
+  font-weight: bold;
+  padding: 1.0em 1.5em;
+  background: $color_primary;
+  border: 1px solid $color_primary;
+  color: $color_primary_text;
+}
+
+@if $device_mode != 'pc'{
+  @media (max-width: $braekpoint_sp1 - 1+px){
+    .fs-c-button--primary {
+      font-size: 14px;
+    }
+  }
+}
+
+/* 商品画像拡大ボタン */
+.fs-c-productMainImage {
+    position: relative;
+}
+.fs-c-productMainImage .fs-c-productMainImage__expandButton.fs-c-buttonContainer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    /* left: 0; */
+    padding: 0;
+}
+.fs-c-productMainImage .fs-c-productMainImage__expandButton.fs-c-buttonContainer button.fs-c-button--viewExtendedImage.fs-c-button--plain{
+  padding: 10px;
+}
+.fs-c-productMainImage .fs-c-productMainImage__image,
+.fs-c-productThumbnail .fs-c-productThumbnail__image{
+  cursor: pointer;
+}
+.fs-c-productMainImage .fs-c-productMainImage__image:hover,
+.fs-c-productThumbnail .fs-c-productThumbnail__image:hover{
+  opacity: 0.8;
+}
+.fs-c-productThumbnail{
+  margin-left: -4px;
+  margin-right: -4px;
+}
+button.fs-c-button--viewExtendedImage.fs-c-button--plain:hover{
+  text-decoration: none;
+}
+
+a.fs-c-button--viewProductDetail.fs-c-button--plain, button.fs-c-button--addToCart--list.fs-c-button--plain {
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    color: $color_primary_text !important;
+    background: $color_primary;
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    padding: 0.5em 0.75em;
+    font-weight: bold;
+}
+
+.itemList .fs-c-productPrice {
+    line-height: 24px;
+}
+
+.ccItemListContainer .itemList--typeC .itemWrap {
+    padding-bottom: 35px;
+}
+
+.ccItemListContainer .itemList--typeC .itemWrap:before{
+  line-height: 1;
+
+}
+
+/*  　　　　　　　　*/
+/* //ボタン関連調整 */
+/*  　　　　　　　　*/
+
+
+/*  　　　　　　　　*/
+/* //商品詳細レイアウト */
+/*  　　　　　　　　*/
+
+@media screen and (min-width: 960px) {
+  .fs-l-product2 .fs-l-productLayout {
+    display: grid;
+    grid-template-columns: calc(60% - 40px / 2) calc(40% - 40px / 2);
+    grid-gap: 40px;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
+  }
+}
+
+/*  　　　　　　　　*/
+/* //商品詳細レイアウト */
+/*  　　　　　　　　*/
+
+// パンくず
+.fs-c-breadcrumb{
+  max-width: $container+px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 24px;
+  padding: 12px 0;
+}
+@media (max-width: $container+px){
+  .fs-c-breadcrumb{
+    padding: 12px 20px;
+  }
+}
+
+.fs-c-breadcrumb__list{
+  padding: 0;
+}
+
+.fs-c-breadcrumb__listItem + .fs-c-breadcrumb__listItem::before {
+    content: ">";
+    display: inline-block;
+    margin: 0 3px;
+}
+
+/*  　　　　　　　　*/
+/* 商品詳細価格表示周り */
+/*  　　　　　　　　*/
+
+.fs-c-productPrices--productDetail .fs-c-productPrice:not(.fs-c-productPrice--listed) .fs-c-productPrice__main__price {
+    font-size: 20px;
+    font-weight: bold;
+}
+.fs-c-productPrice {
+    line-height: 36px;
+}
+
+
+.fs-c-productPointDisplay {
+    font-size: 14px;
+    padding: 2px 8px;
+}
+
+.fs-c-variationLabel {
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.fs-c-variationAndActions{
+  margin: 30px 0 !important;
+}
+
+.fs-l-productLayout .fs-c-inquiryAboutProduct, .fs-l-productLayout .fs-c-returnedSpecialContract, .fs-l-productLayout .fs-c-productReview__addReview {
+    margin-bottom: 0 !important;
+    padding: 6px 0;
+    line-height: 24px;
+}
+
+.fs-c-productNumber{
+  padding: 2px 8px;
+  margin-bottom: 0 !important;
+}
+
+.fs-c-productPrices.fs-c-productPrices--productDetail {
+    margin: 20px 0;
+}
+
+/*  　　　　　　　　*/
+/* //商品詳細価格表示周り */
+/*  　　　　　　　　*/
+
+/*  　　　　　　　　*/
+/* 商品詳細カート周り */
+/*  　　　　　　　　*/
+
+/* 返品特約、お問い合わせボタン */
+.fs-c-returnedSpecialContract .fs-c-returnedSpecialContract__link a,
+button.fs-c-button--inquiryAboutProduct.fs-c-button--plain,
+a.fs-c-button--addReview--detail.fs-c-button--plain {
+    color: $color_text;
+    border: 2px solid $color_border;
+    padding: 5px 15px;
+    display: block;
+    width: 100%;
+    border-radius: 6px;
+    font-weight: 500;
+    text-align: center;
+    -webkit-transition: 0.15s;
+    transition: 0.15s;
+}
+
+.fs-c-returnedSpecialContract .fs-c-returnedSpecialContract__link a:hover,
+button.fs-c-button--inquiryAboutProduct.fs-c-button--plain:hover,
+a.fs-c-button--addReview--detail.fs-c-button--plain:hover {
+  background: #f2f2f2;
+  -webkit-transition: 0.15s;
+  transition: 0.15s;
+  text-decoration: none;
+}
+
+.fs-c-productActionButton.fs-c-buttonContainer {
+    padding: 0;
+}
+
+/* お気に入りボタン */
+button.fs-c-button--addToWishList--detail.fs-c-button--particular {
+    background: #fff;
+    border: 2px solid $color_border;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.fs-c-productQuantityAndWishlist {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1.5fr;
+    grid-auto-rows: auto;
+}
+
+button.fs-c-button--addToCart--variation.fs-c-button--primary {
+  border-radius: 4px;
+  font-size: 14px;
+  padding: 5px 5px;
+  line-height: 24px;
+  background: $color_cta;
+  color: $color_cta_text;
+}
+
+.fs-c-productQuantityAndWishlist{
+
+}
+
+button.fs-c-button--addToCart--detail.fs-c-button--primary {
+    font-size: 20px;
+    border-radius: 6px;
+}
+
+/* 数量ボタンに上下ボタン表示 */
+.fs-c-quantity__select,
+select[name="quantity"] {
+    -webkit-appearance: menulist;
+}
+.fs-c-variationCart--withImage > li {
+    -ms-grid-columns: auto 1fr 2em 128px;
+    grid-template-columns: auto 1fr 40px 128px;
+}
+.fs-c-variationList__item__cart.fs-c-variationCart.fs-c-variationCart--withImage {
+    padding: 0;
+}
+.fs-c-variationList__item__cart.fs-c-variationCart .fs-c-variationCart__wishlist{
+  /* padding-right: 10px; */
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+}
+
+.fs-c-productNameHeading.fs-c-heading .fs-c-productNameHeading__copy{
+  display: block;
+  margin: 12px 0;
+}
+.fs-l-product2 .fs-l-productLayout > * > * {
+  margin-bottom: 12px;
+  line-height: 24px;
+}
+.fs-l-product2 .fs-c-productNameHeading.fs-c-heading{
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+.fs-l-product2 .fs-c-returnedSpecialContract {
+  margin-bottom: 8px;
+}
+/*  　　　　　　　　*/
+/* //商品詳細カート周り */
+/*  　　　　　　　　*/
+
+/*  　　　　　　　　*/
+/* 商品一覧 */
+/*  　　　　　　　　*/
+
+/* 画像拡大ボタン削除（詳細ページへの誘導強化のため） */
+.fs-c-productListItem .fs-c-productListItem__viewMoreImageButton.fs-c-buttonContainer{
+  display: none;
+}
+
+/*  　　　　　　　　*/
+/* //商品一覧 */
+/*  　　　　　　　　*/
+
+/* カートページ */
+th.fs-c-cartTable__headerCell.fs-c-cartTable__headerCell--action {
+  min-width: 105px;
+}
+
+
+/* オリジナルCSS解除関連 */
+// 検索フォーム調整
+.searchForm input[type="text"]{
+  min-height: auto;
+}
+
+/* カラム数調整 */
+
+.fs-l-main{
+  padding: 0;
+  max-width: $container+px;
+  display: -ms-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+@media (max-width: $container+px){
+  .fs-l-main{
+    max-width: 100%;
+    padding: 0 20px;
+  }
+}
+
+body.fs-body-top .fs-l-main{
+  margin: 0;
+  padding: 0;
+}
+
+@if $device_mode != 'SP'{
+  aside#side,
+  .fs-l-main .fs-l-sideArea{
+    padding: 0;
+    margin: 0;
+    max-width: $side_column_width+px;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 $side_column_width+px;
+    flex: 0 0 $side_column_width+px;;
+  }
+
+  .fs-l-main .fs-l-pageMain{
+    max-width: $main_column_width+px;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 $main_column_width+px;
+    flex: 0 0 $main_column_width+px;;
+  }
+}
+
+// TOP 1カラムの場合
+@if $top_columns == 1{
+  @if $under_columns == 1{
+    // トップも下層も1カラム
+    body.fs-body-top .fs-l-main{
+      max-width: none;
+      margin: 0;
+      display: block;
+    }
+
+    .fs-l-main{
+      display: block;
+    }
+
+    .fs-l-main aside#side,
+    .fs-l-main .fs-l-sideArea{
+      display: none;
+    }
+
+    .fs-l-main .fs-l-pageMain{
+      max-width: none;
+    }
+  }@else{
+    // トップは1カラム、下層は2カラム
+
+    body.fs-body-top .fs-l-main{
+      max-width: none;
+      margin: 0;
+      display: block;
+    }
+
+    body.fs-body-top .fs-l-main aside#side,
+    body.fs-body-top .fs-l-main .fs-l-sideArea{
+      display: none;
+    }
+
+    body.fs-body-top .fs-l-main .fs-l-pageMain{
+      max-width: none;
+    }
+  }
+}@else{
+  // トップも下層も2カラム
+  body.fs-body-top .fs-l-main{
+    max-width: $container+px;
+    display: -ms-flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
+// 下層
+.fs-c-heading--page{
+  font-weight: bold;
+  padding-bottom: 0;
+  border-bottom: none;
+  margin-bottom: 30px;
+}
+
+.fs-c-documentArticle__heading{
+  background: transparent;
+  color: $color_text;
+  line-height: 40px;
+  text-align: left;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.fs-c-documentColumn__heading{
+  border: none ;
+  color: $color_text;
+  font-size: 14px;
+  font-weight: bold;
+  color: $color_primary;
+  line-height: 24px;
+  padding: 0;
+  padding-left: 0;
+  margin-bottom: 15px;
+}
+
+
+address.fs-p-address ,
+address.fs-c-address {
+    text-decoration: none;
+    font-style: normal;
+    line-height: 24px;
+    font-size: 14px;
+}
+
+article.fs-c-documentArticle{
+  margin-bottom: 60px;
+  padding: 0;
+}
+
+section.fs-c-documentColumn:not(:last-child),
+section.fs-c-documentArticle__content {
+    margin-bottom: 40px;
+}
+
+section.fs-c-documentColumn:last-child,
+section.fs-c-documentArticle__content:last-child{
+  margin-bottom: 0;
+}
+
+.fs-c-documentArticle + .fs-c-documentArticle {
+    margin-top: 0;
+}
+
+.fs-c-note{
+  font-size: 14px;
+  line-height: 24px;
+  padding: 20px;
+  background: $color_highlight_bg;
+}

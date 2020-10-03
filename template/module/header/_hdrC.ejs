@@ -1,0 +1,98 @@
+<%# PCの場合 %>
+<% if (deviceMode == 'pc') { %>
+  <header id="hdr" class="hdr--typeC">
+    <div class="hdrMiddle hdrMiddle--logoLeft">
+      <div class="hdrInner">
+        <h1 id="hdrLogo" class="hdrMiddle__left"><a href="/"><img class="gNav__listIcon" src="http://corekara.sub.jp/dummyLogo.svg" alt="" width="205" height="40"></a></h1>
+        <div class="hdrMiddle__center">
+          <%- include('../../parts/header/_gNavA') %>
+        </div>
+        <div class="hdrMiddle__right hdrMiddle__right--2">
+          <%- include('../../parts/general/_searchFormC') %>
+          <%- include('../../parts/header/_iconNav') %>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+<% } %>
+
+<%# SPの場合 %>
+<% if (deviceMode == 'sp') { %>
+  <header id="hdr" class="hdr--typeC">
+    <div class="hdrTop">
+      <div class="hdrInner">
+        <%- include('../../parts/header/_hdrInfoA') %>
+      </div>
+    </div>
+    <div class="hdrMiddle hdrMiddle--logoCenter hdrFixed">
+      <div class="hdrInner">
+        <div class="hdrMiddle__left">
+          <%- include('../../parts/header/_iconNavMenuB') %>
+        </div>
+        <h1 id="hdrLogo" class="hdrMiddle__center"><a href="/"><img class="gNav__listIcon" src="http://corekara.sub.jp/dummyLogo.svg" alt="" width="205" height="40"></a></h1>
+        <div class="hdrMiddle__right">
+          <%- include('../../parts/header/_iconNav') %>
+        </div>
+      </div>
+    </div>
+    <div class="hdrBottom">
+      <nav class="bottomNav">
+        <ul>
+          <li>
+            <a href="#">
+              <span class="bottomNav__icon"><i class="material-icons">view_module</i></span>
+              <span class="bottomNav__text">商品一覧</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="bottomNav__icon"><i class="material-icons">search</i></span>
+              <span class="bottomNav__text">商品検索</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="bottomNav__icon"><i class="material-icons">info_outline</i></span>
+              <span class="bottomNav__text">利用ガイド</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="bottomNav__icon"><i class="material-icons">card_giftcard</i></span>
+              <span class="bottomNav__text">特集</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="bottomNav__icon"><i class="material-icons">mail_outline</i></span>
+              <span class="bottomNav__text">お問合せ</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+<% } %>
+
+<%# レスポンシブの場合 %>
+<% if (deviceMode == 'responsive') { %>
+  <header id="hdr" class="hdr--typeC">
+    <div class="hdrMiddle hdrMiddle--logoLeft">
+      <div class="hdrInner">
+        <div class="hdrMiddle__left spOnly">
+          <%- include('../../parts/header/_iconNavMenuB') %>
+        </div>
+        <h1 id="hdrLogo" class="hdrMiddle__left"><a href="/"><img class="gNav__listIcon" src="http://corekara.sub.jp/dummyLogo.svg" alt="" width="205" height="40"></a></h1>
+        <div class="hdrMiddle__center pcOnly">
+          <%- include('../../parts/header/_gNavA') %>
+        </div>
+        <div class="hdrMiddle__right hdrMiddle__right--2">
+          <div class="pcOnly"><%- include('../../parts/general/_searchFormC') %></div>
+          <%- include('../../parts/header/_iconNav') %>
+        </div>
+      </div>
+    </div>
+  </header>
+<% } %>

@@ -1,0 +1,91 @@
+</div><!--main-->
+<!--//wrapper--></div>
+
+<!-- ここからモジュールフッター -->
+<!-- ここまでモジュールフッター -->
+
+<!-- ここからJSモジュール -->
+<!-- ここまでJSモジュール -->
+
+<script>
+// info内の空td削除
+$(function(){
+    $(".info td").each(function() {
+        if($(this).text().length <= 0 || $(this).html() == "&nbsp;"){
+            $(this).parent("tr").remove();
+        }
+    });
+});
+</script>
+
+<script>
+$(function(){
+    $("table").each(function() {
+        $(this).attr('width', '');
+    });
+});
+</script>
+
+<script type="text/javascript">
+ $(document).ready(function(){
+      // 下層メイン部開始位置調整
+      var curURL = document.URL;
+      if(curURL.match(/basket.html/) || curURL.match(/ordercontract.html/) || curURL.match(/ordercontact.html/) || curURL.match(/idinfo.html/) || curURL.match(/new\/inde.html/) || curURL.match(/company.html/)){
+        $("body").addClass('upMain');
+      }
+      if(curURL.match(/company.html/)){
+        $("body").addClass('company');
+      }
+      if(curURL.match(/ordercontract.html/)){
+        $("body").addClass('ordercontract');
+      }
+      if(curURL.match(/idinfo.html/)){
+        $("body").addClass('idinfo');
+      }
+    // 下層タイトル調整
+    $("td.woong").each(function() {
+      if($(this).children('img').length >= 1){
+        var src = $(this).children('img').attr('src');
+          if(src.match(/membertitle/)){
+            $(this).addClass("titleRegi");
+            $(this).addClass("titleB");
+          }
+          if(src.match(/companytitle/)){
+            $(this).addClass("titleCompany");
+            $(this).addClass("titleB");
+          }
+          if(src.match(/helptitle/)){
+            $(this).addClass("titleGuide");
+            $(this).addClass("titleB");
+          }
+          if(src.match(/baskettitle/)){
+            $(this).addClass("titleCart");
+            $(this).addClass("titleB");
+          }
+        }
+    });
+});
+</script>
+
+<script>
+// 最近チェックした商品調整
+$(function(){
+  $("#recent").each(function() {
+    var button = '';
+    if($(this).next('').hasClass('itemList--typeD')){
+      var button = '<span class="button arrow">詳しく見る</span>';
+    }
+    $(this).find('.itemBox').each(function() {
+      var href = $(this).find('a').attr('href');
+      var img = $(this).find('img').attr('src');
+      var text = $(this).find('.name').text();
+      var price = $(this).find('.price').text();
+      var html = '<li class="itemList__unit">' + '<a href="'+href+'" class="itemWrap"><img src="'+img+'" alt="商品画像" class="itemImg" /><p class="itemName">' + text + '</p><p class="itemPrice">' + price + '</p>'+button+'</a></li>';
+      if(img != undefined){
+        $('.js-targetRecentItems').append(html);
+      }
+    });
+  });
+
+});
+</script>

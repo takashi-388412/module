@@ -1,0 +1,208 @@
+.newsList,.newsList li{list-style: none;}
+.newsList a:hover,a.newsBnr:hover{
+  color: $color_primary;
+  text-decoration: none;
+  img{
+    opacity: 0.8;
+  }
+}
+.newsBnr{
+  text-align: center;
+  display: block;
+  img{
+    max-width: 100%;
+  }
+}
+.newsList{
+  li{
+    list-style: none;
+    display: -ms-flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 8px 0;
+    border-bottom: 1px solid $color_border;
+    time{
+      font-size: 12px;
+      max-width: 80px;
+      -webkit-box-flex: 0;
+      -ms-flex: 0 0 80px;
+      flex: 0 0 80px;
+      line-height: 24px;
+    }
+    h3{
+      line-height: 24px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+    @media (max-width: $container+px) {
+      display: block;
+      time{
+        font-size: 12px;
+        max-width: 100%;
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        margin-bottom: 5px;
+      }
+    }
+  }
+}
+
+.newsList--typeB{
+  display: -ms-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-top: 1px solid $color_border;
+  border-bottom: 1px solid $color_border;
+  padding: 10px 0;
+  .newsList__head{
+    margin: 0 40px;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 auto;
+            flex: 0 1 auto;
+  }
+  .newsList__body{
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+    padding: 10px;
+    ul,.makeNewsWrap{
+      padding: 10px;
+      overflow: scroll;
+      overflow-x: hidden;
+      overflow-y: scroll;
+      height: 150px;
+      li{
+        border-bottom: 0;
+      }
+    }
+  }
+
+  @if $device_mode != "pc"{
+    @media (max-width: $braekpoint_sp1 - 1+px) {
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+      border: none;
+      .newsList__head{
+        margin: 0;
+        -webkit-box-flex: 0;
+            -ms-flex: 0 1 100%;
+                flex: 0 1 100%;
+        margin-bottom: 20px;
+      }
+      .newsList__body{
+        border-top: 1px solid $color_border;
+        border-bottom: 1px solid $color_border;
+        -webkit-box-flex: 1;
+            -ms-flex: 1 1 100%;
+                flex: 1 1 100%;
+        padding: 10px;
+        ul{
+          padding: 10px;
+          overflow: scroll;
+          overflow-x: hidden;
+          overflow-y: scroll;
+          height: 150px;
+          li{
+            border-bottom: 0;
+          }
+        }
+      }
+
+    }
+  }
+}
+
+.highlight--narrow{
+  padding: 20px 0;
+}
+
+.newsList--typeC{
+  display: -ms-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  .newsList__head {
+    display: -ms-flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-right: 20px;
+    max-width: 100px;
+    vertical-align: middle;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100px;
+            flex: 0 0 100px;
+    h2{
+      font-weight: normal;
+      text-align: center;
+      font-size: 12px;
+      line-height: 26px;
+      background: $color_secondary;
+      color: $color_secondary_text;
+      width: 100%;
+    }
+    i{
+      font-size: 14px;
+      vertical-align: middle;
+      line-height: 27px;
+      display: inline-block;
+    }
+
+
+  }
+  .newsList__body {
+    max-width: calc(100% - 120px);
+    -webkit-box-flex: calc(100% - 120px);
+        -ms-flex: calc(100% - 120px);
+            flex: calc(100% - 120px);
+    // ul li:not(:first-child){
+    //   display: none;
+    // }
+    ul li{
+      border-bottom: 0;
+      line-height: 30px;
+      padding: 3px 0;
+    }
+    // ↓スクロールさせる場合
+    // ul{
+    //   padding: 0px;
+    //   overflow: scroll;
+    //   overflow-x: hidden;
+    //   overflow-y: scroll;
+    //   height: 30px;
+    //   li{
+    //     padding: 0;
+    //     line-height: 30px;
+    //     margin-bottom: 5px;
+    //   }
+    // }
+  }
+  @media (max-width: $braekpoint_sp1 - 1+px){
+    .newsList__head {
+      margin-right: 15px;
+      max-width: 70px;
+      vertical-align: middle;
+      -webkit-box-flex: 0;
+          -ms-flex: 0 0 70px;
+              flex: 0 0 70px;
+      h2{
+        i{display: none;}
+      }
+    }
+    .newsList__body {
+      max-width: calc(100% - 85px);
+      -webkit-box-flex: calc(100% - 85px);
+          -ms-flex: calc(100% - 85px);
+              flex: calc(100% - 85px);
+      h3{
+        font-size: 12px;
+      }
+    }
+  }
+}

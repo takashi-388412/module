@@ -1,0 +1,16 @@
+.hdr--typeA {
+
+  .hdrBottom{
+    background: $color_primary;
+    a{
+      color: $color_primary_text;
+      &:hover{
+        color: $color_primary_text;
+      }
+    }
+    .hasChildren > a::after{
+      border-color: $color_primary_text;
+    }
+  }
+
+}

@@ -1,0 +1,65 @@
+.hdrBottom{
+  position: relative;
+}
+.gNav li.hasChildren > ul,
+.gNav li.hasChildren > .megaMenu{
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  top: 100%;
+  opacity: 0;
+  pointer-events: none;
+  background: $color_body_bg;
+
+  &.open{
+    pointer-events: all;
+    opacity: 1;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
+}
+
+.gNav{
+  .megaMenu__inner{
+    max-width: $container+px;
+    margin: auto;
+  }
+  .megaMenu{
+    padding: 40px 20px 30px;
+    border-bottom: 1px solid $color_border;
+    li{
+      max-width: 25%;
+      -webkit-box-flex: 0;
+      -ms-flex: 0 0 25%;
+      flex: 0 0 25%;
+      a{
+        width: 100%;
+        color: $color_text;
+        font-weight: bold;
+        text-align: left;
+        &:hover{
+          color: $color_primary;
+        }
+      }
+    }
+    .row{
+      // margin-left: -10px;
+      // margin-right: -10px;
+      [class*="col-"]{
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+    }
+  }
+}
+
+.megaMenu__button{
+  border: 1px solid $color_border;
+  border-radius: 100px;
+  padding: 10px 30px 10px 15px;
+  &:hover{
+    background: $color_highlight_bg;
+
+  }
+}

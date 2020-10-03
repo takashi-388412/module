@@ -1,0 +1,54 @@
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+
+<!-- ここからモジュールCSS読み込み -->
+<link rel="stylesheet" type="text/css" href=""/>
+<!-- ここまでモジュールCSS読み込み -->
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+<!-- ここからヘッダーモジュール -->
+<!-- ここまでヘッダーモジュール -->
+
+<!-- container -->
+<{if $tpl_name == 'top'}>
+<div id="container" class="topPage clearfix">
+<{else}>
+<div id="container" class="clearfix">
+<{/if}>
+
+  <div id="main">
+    <{include file = $file_name}>
+  </div>
+
+  <!-- ここからサイドモジュール -->
+  <!-- ここまでサイドモジュール -->
+
+</div><!-- container -->
+
+<!-- ここからフッターモジュール -->
+<!-- ここまでフッターモジュール -->
+
+<!-- ここからJSモジュール -->
+<!-- ここまでJSモジュール -->
+
+<!-- <script>
+$(function () {
+  $('.prd_search_form_btn').click(function () {
+    $('.prd_search_block').toggleClass('open');
+    $('.prd_search_form').slideToggle();
+  });
+  $('.js-gNavDrop').hover(function () {
+    $(this).children(".gNav__drop").stop(true,true).fadeIn("fast");
+  },function(){
+    $(this).children(".gNav__drop").fadeOut("fast");
+  });
+  $(window).load(function () {
+    $('.prd_lst_unit_s').tile();
+    $('.column--2').tile();
+    $('.prd_lst_unit_m').tile();
+    $('.grp_lst_unit').tile();
+  });
+});
+</script> -->

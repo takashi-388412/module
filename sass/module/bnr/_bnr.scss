@@ -1,0 +1,30 @@
+.bnrList{
+  a{
+    display: block;
+    &:hover{
+      color: $color_primary;
+      img{
+        opacity: 0.8;
+      }
+    }
+  }
+}
+
+.bnr,.bnrBox img{
+  display: block;
+  max-width: 100%;
+}
+
+.bnrBox{
+  h3{
+    font-size: 16px;
+    line-height: 40px;
+  }
+  p{
+
+  }
+  img + *{
+    margin-top: 10px;
+  }
+
+}

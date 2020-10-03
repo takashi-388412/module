@@ -1,0 +1,88 @@
+.exNav.exNav--typeA ul li a,
+.arrow,
+.megaMenu .button,
+.megaMenu .megaMenu__button,
+.itemList--typeC .itemWrap,
+.articleList--typeB .articleList__text,
+.articleList--typeD .articleList__wrap,
+a.iconButton,
+.cateList .button,
+.side__cateNav ul li a,
+.drawer__nav li a,
+.side__txtBnr,
+[class*='fNav--type']:not(.fNav--typeA) .fNav__list a,
+li.hasChildren > a{
+  position: relative;
+  transition: 0.3s;
+
+  &:hover{
+    transition: 0.3s;
+  }
+
+  &::after{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    width: 6px;
+    height: 6px;
+    border-top: 2px solid $color_text;
+    border-right: 2px solid $color_text;
+    -webkit-transform: rotate(45deg) translateY(-50%);
+            transform: rotate(45deg) translateY(-50%);
+    -webkit-transform-origin: top center;
+            transform-origin: top center;
+
+    transition: 0.15s;
+  }
+
+  &:hover{
+    &::after{
+      transition: 0.2s;
+      margin-left: 3px;
+      border-color: $color_primary;
+    }
+  }
+}
+
+.megaMenu .button,
+.megaMenu .megaMenu__button,
+.side__cateNav ul li a,
+.drawer__nav li a,
+[class*='fNav--type']:not(.fNav--typeA) .fNav__list a,
+a.iconButton,
+.cateList .button,
+.side__txtBnr,
+.arrow{
+  position: relative;
+  padding-right: 15px;
+  &:after{
+    right: 15px;
+  }
+  &:hover{
+    &:after{
+      right: 12px;
+    }
+  }
+}
+
+.exNav.exNav--typeA ul li a::before,
+li.hasChildren > a::after{
+
+}
+
+li.hasChildren{
+   > a{
+     &::after{
+       -webkit-transform: rotate(135deg) translateY(-50%);
+       transform: rotate(135deg) translateY(-50%);
+     }
+   }
+  &:hover{
+    > a::after{
+      -webkit-transform: rotate(-45deg) translateY(-50%);
+              transform: rotate(-45deg) translateY(-50%);
+      border-color: $color_primary;
+    }
+  }
+}

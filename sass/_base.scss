@@ -1,0 +1,214 @@
+html{
+  font-size:10px; //変更しないでください
+  letter-spacing: 0.5px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+small{
+  font-size: 12px;
+}
+body{
+  font-family: $base_font_family;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: $base_font_size+px;
+  color: $color_text;
+  min-width: inherit;
+  letter-spacing: 0.05em;
+  p{
+    font-size: $base_font_size+px;
+    line-height: 20px;
+  }
+}
+
+pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow: auto;
+}
+
+input,textarea,select{
+  font-family: $base_font_family;
+}
+
+figure{
+  text-align: center;
+  margin: 0;
+  img{
+    max-width: 100%;
+  }
+}
+
+main{
+  display: block;
+  width: 100%;
+  position: relative;
+}
+
+section{
+  display: block;
+  width: 100%;
+  margin-bottom: $pc_section_margin_bottom+px;
+  @if $device_mode != 'pc'{
+    @media (max-width: 767px) {
+      margin-bottom: $sp_section_margin_bottom+px;
+    }
+  }
+}
+p{
+  display: block;
+  width: 100%;
+  margin-bottom: 24px;
+  &:last-child{
+    margin-bottom: 0;
+  }
+}
+
+a{
+  color: $color_text_link;
+  text-decoration: none;
+  &:visited{
+    color: $color_text_link;
+    text-decoration: none;
+  }
+  &:hover,&:focus{
+    text-decoration: none;
+  }
+}
+a[href^="tel:"] {
+  color: $color_text_link;
+  text-decoration: none;
+}
+
+
+
+@if $device_mode != 'pc'{
+  .container {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0 $sp_bezel+px;
+  }
+  @media (min-width: $container+px) {
+    .container {
+      padding: 0;
+      max-width: $container+px;
+    }
+  }
+}@else{
+  .container {
+    width: 100%;
+    max-width: $container+px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+
+
+.row img{
+  max-width: 100%;
+}
+
+i.material-icons{
+  font-size: 24px;
+}
+
+
+@if $device_mode == 'pc'{
+  #hdr, #ftr{
+    min-width: 1200px;
+  }
+}
+
+
+
+
+@if $device_mode == 'pc'{
+  .spOnly{
+    display: none !important;
+  }
+}
+
+@if $device_mode == 'sp'{
+  .pcOnly{
+    display: none !important;
+  }
+}
+
+@if $device_mode == 'responsive'{
+  @media (max-width: $braekpoint_tab - 1+px) {
+    .pcOnly{
+        display: none !important;
+      }
+  }
+  @media (min-width: $braekpoint_tab+px) {
+    .spOnly{
+      display: none !important;
+    }
+  }
+}
+
+
+
+
+@if $top_columns == 1{
+  @if $under_columns == 1{
+    /*サイド メイン100%*/
+    #side{
+      display: none;
+    }
+    #main{
+      float: none;
+    }
+    #container:not(.topPage){
+      width: $container+px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    #container.topPage #main {
+      width: 100%;
+    }
+  }@else{
+    #container.topPage #side {
+      display: none;
+    }
+    #container:not(.topPage){
+      width: $container+px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    /*サイド*/
+    #container:not(.topPage) #side {
+      float: left;
+      width: $side_column_width+px;
+    }
+    /*メイン*/
+    #container:not(.topPage) #main {
+      float: right;
+      width: $main_column_width+px;
+    }
+  }
+
+}@else{
+  #container{
+    width: $container+px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  /*サイド*/
+  #container #side {
+    float: left;
+    width: $side_column_width+px;
+  }
+  /*メイン*/
+  #container #main {
+    float: right;
+    width: $main_column_width+px;
+  }
+}

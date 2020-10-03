@@ -1,0 +1,155 @@
+<!-- 売れ筋 -->
+<{if $seller}>
+<section>
+  <div class="container">
+    <h2 class="h2D">売れ筋商品<span><small>ITEM RANKING</small></span></h2>
+    <ul class="itemList itemList--ranking itemList--typeA itemList-pc--4 itemList-sp--2">
+    <{section name=num loop=$seller max=8 }>
+      <li class="itemList__unit">
+        <a href="<{$seller[num].link_url}>" class="itemWrap">
+          <!-- 商品画像 -->
+          <{if $seller[num].img_url != ""}>
+            <img class="itemImg" src="http://corekara.sub.jp/partslist/wp-content/uploads/module/dummy800800.png" alt="<{$seller[num].name}>の商品画像" >
+          <{else}>
+            <img class="itemImg" src="https://img.shop-pro.jp/tmpl_img/67/m.gif" alt="<{$seller[num].name}>の商品画像" >
+          <{/if}>
+
+          <!-- 商品名 -->
+          <p class="itemName"><{$seller[num].name}></p>
+
+          <!-- 定価 -->
+          <{if $members_login_flg == true && $seller[num].discount_flg == true}>
+            <p class="itemPrice__regular"><{$seller[num].regular_price}></p>
+          <{/if}>
+
+          <!-- 商品価格 -->
+          <p class="itemPrice"><{$seller[num].price}></p>
+          <span class="itemPrice__discount"><{if $members_login_flg == true && $seller[num].discount_flg == true}><{$seller[num].discount_rate}>OFF!!<{/if}></span>
+
+          <!-- 売り切れ -->
+          <{if $seller[num].soldout_flg == true}><p class="itemList__soldOut">SOLD OUT</p><{/if}>
+        </a>
+      </li><!--itemList__unit-->
+    <{/section}>
+    </ul>
+  </div>
+</section>
+<{/if}>
+<!--// 売れ筋 -->
+
+<!-- おすすめ -->
+<{if $recommend}>
+<section>
+  <div class="container">
+    <h2 class="h2D">おすすめ商品<span><small>RECOMMENDED ITEMS</small></span></h2>
+    <ul class="itemList  itemList--typeA itemList-pc--4 itemList-sp--2">
+    <{section name=num loop=$recommend max=8 }>
+      <li class="itemList__unit">
+        <a href="<{$recommend[num].link_url}>" class="itemWrap">
+          <!-- 商品画像 -->
+          <{if $recommend[num].img_url != ""}>
+            <img class="itemImg" src="http://corekara.sub.jp/partslist/wp-content/uploads/module/dummy800800.png" alt="<{$recommend[num].name}>の商品画像" >
+          <{else}>
+            <img class="itemImg" src="https://img.shop-pro.jp/tmpl_img/67/m.gif" alt="<{$recommend[num].name}>の商品画像" >
+          <{/if}>
+
+          <!-- 商品名 -->
+          <p class="itemName"><{$recommend[num].name}></p>
+
+          <!-- 定価 -->
+          <{if $members_login_flg == true && $recommend[num].discount_flg == true}>
+            <p class="itemPrice__regular"><{$recommend[num].regular_price}></p>
+          <{/if}>
+
+          <!-- 商品価格 -->
+          <p class="itemPrice"><{$recommend[num].price}></p>
+          <span class="itemPrice__discount"><{if $members_login_flg == true && $recommend[num].discount_flg == true}><{$recommend[num].discount_rate}>OFF!!<{/if}></span>
+
+          <!-- 売り切れ -->
+          <{if $recommend[num].soldout_flg == true}><p class="itemList__soldOut">SOLD OUT</p><{/if}>
+        </a>
+      </li><!--itemList__unit-->
+    <{/section}>
+    </ul>
+  </div>
+</section>
+<{/if}>
+<!--// おすすめ -->
+
+
+<!-- 新着商品 -->
+<{if $new_item}>
+<section>
+  <div class="container">
+    <h2 class="h2D">新着商品<span><small>NEW ITEMS</small></span></h2>
+    <ul class="itemList  itemList--typeA itemList-pc--4 itemList-sp--2">
+    <{section name=num loop=$new_item max=8 }>
+      <li class="itemList__unit">
+        <a href="<{$new_item[num].link_url}>" class="itemWrap">
+          <!-- 商品画像 -->
+          <{if $new_item[num].img_url != ""}>
+            <img class="itemImg" src="http://corekara.sub.jp/partslist/wp-content/uploads/module/dummy800800.png" alt="<{$new_item[num].name}>の商品画像" >
+          <{else}>
+            <img class="itemImg" src="https://img.shop-pro.jp/tmpl_img/67/m.gif" alt="<{$new_item[num].name}>の商品画像" >
+          <{/if}>
+
+          <!-- 商品名 -->
+          <p class="itemName"><{$new_item[num].name}></p>
+
+          <!-- 定価 -->
+          <{if $members_login_flg == true && $new_item[num].discount_flg == true}>
+            <p class="itemPrice__regular"><{$new_item[num].regular_price}></p>
+          <{/if}>
+
+          <!-- 商品価格 -->
+          <p class="itemPrice"><{$new_item[num].price}></p>
+          <span class="itemPrice__discount"><{if $members_login_flg == true && $new_item[num].discount_flg == true}><{$new_item[num].discount_rate}>OFF!!<{/if}></span>
+
+          <!-- 売り切れ -->
+          <{if $new_item[num].soldout_flg == true}><p class="itemList__soldOut">SOLD OUT</p><{/if}>
+        </a>
+      </li><!--itemList__unit-->
+    <{/section}>
+    </ul>
+  </div>
+</section>
+<{/if}>
+<!--// 新着商品 -->
+
+
+<!-- 最近チェックした商品 -->
+<{if $history_num != 0}>
+<section>
+  <div class="container">
+    <h2 class="h2A">最近チェックした商品</h2>
+    <ul class="itemList  itemList--typeA itemList-pc--4 itemList-sp--3">
+      <{section name=num loop=$history max=8 }>
+        <li class="itemList__unit">
+          <a href="<{$history[num].link_url}>" class="itemWrap">
+            <!-- 商品画像 -->
+            <{if $history[num].img_url != ""}>
+              <img class="itemImg" src="http://corekara.sub.jp/partslist/wp-content/uploads/module/dummy800800.png" alt="<{$history[num].name}>の商品画像" >
+            <{else}>
+              <img class="itemImg" src="https://img.shop-pro.jp/tmpl_img/67/m.gif" alt="<{$history[num].name}>の商品画像" >
+            <{/if}>
+
+            <!-- 商品名 -->
+            <p class="itemName"><{$history[num].name}></p>
+
+            <!-- 定価 -->
+            <{if $members_login_flg == true && $history[num].discount_flg == true}>
+              <p class="itemPrice__regular"><{$history[num].regular_price}></p>
+            <{/if}>
+
+            <!-- 商品価格 -->
+            <p class="itemPrice"><{$history[num].price}></p>
+            <span class="itemPrice__discount"><{if $members_login_flg == true && $history[num].discount_flg == true}><{$history[num].discount_rate}>OFF!!<{/if}></span>
+
+          </a>
+        </li><!--itemList__unit-->
+      <{/section}>
+    </ul>
+  </div>
+</section>
+<{/if}>
+<!--// 最近チェックした商品 -->

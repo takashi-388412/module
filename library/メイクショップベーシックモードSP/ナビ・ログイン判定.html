@@ -1,0 +1,58 @@
+<!-- ドロワー＞アカウントナビ -->
+<ul class="drawer__accountNav">
+  <{if $member.is_logged_in}>
+    <li>
+      <a href="<{$login_url}>">
+        <i class="material-icons">meeting_room</i>ログアウト
+      </a>
+    </li>
+    <li>
+      <a href="<{$member_edit_url}>">
+        <i class="material-icons">create</i>会員情報修正
+      </a>
+    </li>
+    <li>
+      <a href="<{$member_orderhistory_url}>">
+        <i class="material-icons">restore</i>注文履歴
+      </a>
+    </li>
+    <li>
+      <a href="<{$member_point_url}>">
+        <i class="material-icons">local_parking</i>ポイント
+      </a>
+    </li>
+  <{else}>
+    <li>
+      <a href="<{$login_url}>">
+        <i class="material-icons">meeting_room</i>ログイン
+      </a>
+    </li>
+    <li>
+      <a href="<{$member_regist_url}>">
+        <i class="material-icons">person</i>新規会員登録
+      </a>
+    </li>
+  <{/if}>
+</ul>
+<!-- ドロワー＞アカウントナビ -->
+
+<!-- ヘッダー＞アイコンナビ  -->
+<nav class="iconNav">
+  <ul>
+    <!-- <li><a href="#"><i class="material-icons">favorite</i></a></li> -->
+    <{if $member.is_logged_in}>
+      <li><a href="<{$member_orderhistory_url}>"><i class="material-icons">person</i></a></li>
+    <{else}>
+      <li><a href="<{$login_txt}>"><i class="material-icons">person</i></a></li>
+    <{/if}>
+    <li><a href="<{$basket_url}>" class="iconNav__cart"><span class="cartAmount"><{$cart_quantity}></span><i class="material-icons">shopping_cart</i></a></li>
+  </ul>
+</nav>
+<!-- ヘッダー＞アイコンナビ  -->
+
+<!-- 各種機能ページへのリンク -->
+<li><a href="<{$guide_url}>">ご利用ガイド</a></li>
+<li><a href="<{$policy_url}>">プライバシーポリシー</a></li>
+<li><a href="<{$contract_url}>">特定商取引法について</a></li>
+<li><a href="<{$support_url}>">お問い合わせ</a></li>
+<!-- 各種機能ページへのリンク -->

@@ -1,0 +1,28 @@
+$color_body_bg:#FFF; //サイト背景
+$color_text:#1b1b1b; //サイト文字色
+
+$color_highlight_bg: #f2f2f2; //ハイライト
+$color_highlight_text: $color_text; //ハイライト文字色
+
+$color_primary:#108A65; //メインカラー
+$color_primary_text:#ffffff; //メインカラー文字色
+
+$color_secondary:#64BEA3; //サブカラー
+$color_secondary_text:#ffffff; //サブカラー文字色
+
+$color_cta: $color_primary; //メインカラー
+$color_cta_text:#ffffff; //メインカラー文字色
+
+$color_border:#dfdfdf; //ボーダーカラー
+
+$color_white: #FFF;
+$color_black: #1b1b1b;
+
+$color_text_link:$color_text;
+
+
+// ボタン
+$color_button_text: #FFF;
+$color_button_text_hover: $color_button_text;
+$color_button_bg: $color_primary;
+$color_button_bg_hover: #7F151C;

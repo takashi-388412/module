@@ -1,0 +1,20 @@
+.hdr--typeB {
+  .hdrTop{
+    background: $color_primary;
+    color: $color_primary_text;
+    .text--primary{
+      color: $color_primary_text !important;
+    }
+  }
+
+  .hdrMiddle{
+    .hdrInfo{
+      // text-align: right;
+    }
+  }
+
+  .hdrBottom{
+    background: $color_highlight_bg;
+    // padding: 10px 20px;
+  }
+}

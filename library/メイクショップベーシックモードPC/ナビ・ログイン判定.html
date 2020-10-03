@@ -1,0 +1,65 @@
+<!-- エクストラナビ -->
+<nav class="exNav exNav--typeA">
+  <ul>
+    <li class="js-guest"><a href=[LOGIN]>ログイン</a></li>
+    <li class="js-member"><a href=[LOGOUT]>ログアウト</a></li>
+    <li class="js-guest"><a href=[MEMBER]>会員登録</a></li>
+    <li class="js-member"><a href=[MYPAGE]>マイアカウント</a></li>
+    <li><a href=[USEINFO]>ご利用ガイド</a></li>
+    <li><a href=[EMAIL]>お問い合わせ</a></li>
+  </ul>
+</nav>
+
+<!-- //エクストラナビ -->
+
+<!-- グローバルナビ -->
+<nav class="gNav gNav--typeA">
+  <ul>
+    <li class="hasChildren">
+      <a href="#">カテゴリーから選ぶ</a>
+      <div class="megaMenu">
+        <ul class="megaMenu__inner row">
+          <li class="col-3"><a href="#" class="megaMenu__button">カテゴリー</a></li>
+          <li class="col-3"><a href="#" class="megaMenu__button">カテゴリー</a></li>
+        </ul>
+      </div>
+    </li>
+    <li><a href=[ALL_VIEW]>商品一覧</a></li>
+    <li><a href=[USEINFO]>ご利用ガイド</a></li>
+    <li><a href=[EMAIL]>お問い合わせ</a></li>
+  </ul>
+</nav>
+<!-- //グローバルナビ -->
+
+<!-- アイコンナビ -->
+<nav class="iconNav">
+  <ul>
+    <!-- <li><a href="#"><i class="material-icons">favorite</i></a></li> -->
+    <li class="js-guest"><a href=[LOGIN]><i class="material-icons">person</i></a></li>
+    <li class="js-member"><a href=[MYPAGE]><i class="material-icons">person</i></a></li>
+    <li class="iconNav__cart"><a href=[BASKET]><span class="cartAmount">0</span><i class="material-icons">shopping_cart</i></a></li>
+  </ul>
+</nav>
+<!-- //アイコンナビ -->
+
+<!-- フッターナビ -->
+<ul class="fNav__list">
+  <li><a href=[USEINFO]>ご利用ガイド</a></li>
+  <li><a href=[EMAIL]>お問い合わせ</a></li>
+
+  <!-- 必ず【ショップIDを書き換える -->
+  <li><a href="https://www.makeshop.jp/ssl/popup_mailmagazine.html?db=【ショップID】&mspbk=1">メールマガジン登録</a></li>
+  <!-- 必ず【ショップIDを書き換える -->
+
+  <li><a href=[CONTRACT]>特定商取引法表示について</a></li>
+  <li><a href=[VIEWPRIVERCY]>プライバシーポリシー</a></li>
+</ul>
+<!-- //フッターナビ -->
+
+<!-- 検索フォーム -->
+<form action="/shop/shopbrand.html" class="searchForm searchFormB" role="search" method="get">
+  <div class="searchForm__inner">
+    <input type="text" value="" name="search" id="s" placeholder="キーワードで検索する">
+    <button type="submit" class="searchForm__submit"><i class="gNav__listIcon material-icons">search</i></button>
+  </div>
+</form>

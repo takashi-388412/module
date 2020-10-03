@@ -1,0 +1,91 @@
+<!-- エクストラナビ -->
+<nav class="exNav exNav--typeA">
+  <ul>
+    <{if $members_use_flg}>
+      <{if $members_login_flg}>
+        <li><a href="<{$members_login_url}>">ログアウト</a></li>
+        <li><a href="<{$view_myaccount_url}>">マイアカウント</a></li>
+      <{else}>
+        <li><a href="<{$members_login_url}>">ログイン</a></li>
+        <li><a href="<{$members_regi_url}>">会員登録</a></li>
+      <{/if}>
+    <{/if}>
+
+    <li><a href="<{$delivery_url}>">配送方法</a></li>
+    <li><a href="<{$payment_url}>">お支払方法</a></li>
+    <li><a href="<{$view_inq_url}>">お問い合わせ</a></li>
+  </ul>
+</nav>
+<!-- //エクストラナビ -->
+
+<!-- アイコンナビ -->
+<nav class="iconNav">
+  <ul>
+    <!-- <li><a href="#"><i class="material-icons">favorite</i></a></li> -->
+    <li><a href="<{$view_myaccount_url}>"><i class="material-icons">person</i></a></li>
+    <li><a href="<{$view_cart_url}>" class="iconNav__cart">
+      <span class="cartAmount"><{$incart_total_count}></span>
+      <i class="material-icons">shopping_cart</i></a></li>
+  </ul>
+</nav>
+<!-- //アイコンナビ -->
+
+<!-- フッターナビ -->
+<ul>
+  <li><a href="<{$delivery_url}>">配送方法</a></li>
+  <li><a href="<{$payment_url}>">お支払方法</a></li>
+  <li><a href="<{$view_inq_url}>">お問い合わせ</a></li>
+  <li><a href="<{$mailmaga_url}>">メールマガジン登録</a></li>
+  <li><a href="<{$sk_url}>">特定商取引法表示について</a></li>
+  <li><a href="<{$privacy_url}>">プライバシーポリシー</a></li>
+</ul>
+<!-- //フッターナビ -->
+
+<!-- 検索フォーム -->
+<form action="/" class="searchForm searchFormA" role="search" method="get">
+  <div class="searchForm__inner">
+    <input type="hidden" name="mode" value="srh">
+    <input type="text" value="" name="keyword" placeholder="キーワードで検索する">
+    <button type="submit" class="searchForm__submit"><i class="gNav__listIcon material-icons">search</i></button>
+  </div>
+</form>
+
+<!-- ドロワーアカウント -->
+<{if $members_use_flg}>
+  <div class="drawer__account">
+    <div class="drawer__accountText">
+      <h2>ACCOUNT MENU</h2>
+      <{if $members_login_flg}>
+        <p>ようこそ　<{$members_login_name}> 様</p>
+      <{else}>
+        <p>ようこそ　ゲスト 様</p>
+      <{/if}>
+
+    </div>
+    <ul class="drawer__accountNav">
+      <{if $members_login_flg}>
+        <li>
+          <a href="<{$members_login_url}>">
+            <i class="material-icons">meeting_room</i>ログアウト
+          </a>
+        </li>
+        <li>
+          <a href="<{$view_myaccount_url}>">
+            <i class="material-icons">person</i>マイアカウント
+          </a>
+        </li>
+      <{else}>
+        <li>
+          <a href="<{$members_login_url}>">
+            <i class="material-icons">meeting_room</i>ログイン
+          </a>
+        </li>
+        <li>
+          <a href="<{$members_regi_url}>">
+            <i class="material-icons">person</i>新規会員登録
+          </a>
+        </li>
+      <{/if}>
+    </ul>
+  </div>
+<{/if}>

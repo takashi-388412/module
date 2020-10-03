@@ -1,0 +1,42 @@
+.mainSliderSec{
+  overflow: hidden;
+  .mainSliderSec__inner{
+    max-width: $container+px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+
+  }
+  .slick-list{
+    overflow: visible;
+    img{
+      max-width: 100%;
+    }
+  }
+  #scrollBtn{
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 80px;
+    text-align: center;
+    font-size: 10px;
+    height: 24px;
+    font-weight: bold;
+    &:before{
+      content: "";
+      display: block;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 15px;
+      height: 15px;
+      border-top: 1px solid #000000;
+      border-right: 1px solid #000000;
+      transform: rotate(135deg);
+      margin: auto;
+    }
+  }
+}

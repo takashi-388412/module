@@ -1,0 +1,34 @@
+#ftr{
+
+}
+
+.snsNav{
+  list-style: none;
+  display: -ms-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  li{
+    list-style: none;
+    margin-right: 20px;
+  }
+  i{
+    font-size: 24px;
+  }
+}
+
+.ftr--typeA{
+  background: $color_body_bg;
+  padding: 0;
+}
+.ftr--typeC{
+  background: $color_body_bg;
+  @media (min-width: $braekpoint_tab+px){
+    background: $color_primary;
+  }
+  padding: 0;
+
+}

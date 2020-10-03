@@ -1,0 +1,227 @@
+$button_A :'.button--typeA';
+$button_B :'.button--typeB';
+$button_C :'.button--typeC';
+$button_D :'.button--typeD';
+
+@if $button_type == 'A' {
+  $button_A :'.button';
+} @elseif $button_type == 'B'{
+  $button_B:'.button';
+} @elseif $button_type == 'C'{
+  $button_C :'.button';
+} @elseif $button_type == 'D'{
+  $button_DA :'.button';
+}
+
+
+.button,
+.button--typeA,
+.button--typeB,
+.button--typeC,
+.button--typeD,
+.megaMenu__button,
+a.button{
+  position: relative;
+  transition: 0.3s;
+  width: 240px;
+  line-height: 20px;
+  padding: 8px 30px;
+  display: inline-block;
+  text-align: center;
+  font-weight: bold;
+  &.arrow{
+    padding-right: 30px;
+  }
+  &:hover{
+    transition: 0.3s;
+  }
+  span,
+  i{
+    display: inline-block;
+    vertical-align: middle;
+    margin:0 3px;
+  }
+  span{
+    line-height: 24px;
+  }
+}
+
+.button--typeA,
+a.button--typeA,
+#{$button_A},
+a#{$button_A}
+{
+
+  background: $color_button_bg;
+  color: $color_button_text;
+  border:2px solid $color_button_bg;
+  border-radius: $button_radius+px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 4px 0px;
+  &.arrow{
+    &::after{
+      border-color:#fff;
+      right: 15px;
+    }
+    &:hover{
+      border-color:$color_button_bg;
+      background-color: $color_button_text;
+      color: $color_button_bg;
+      &::after{
+        border-color:$color_button_bg;
+        right: 10px;
+      }
+    }
+  }
+  &:hover{
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 4px 6px 0px;
+  }
+}
+
+.button--typeB,
+a.button--typeB,
+#{$button_B},
+a#{$button_B}{
+  border:2px solid $color_button_bg;
+  background-color: $color_button_text;
+  color: $color_button_bg;
+  border-radius: $button_radius+px;
+  &:after{
+    border-color:$color_button_bg;
+  }
+  &:hover{
+    background: $color_highlight_bg;
+  }
+}
+
+.button--typeC,
+a.button--typeC,
+#{$button_C},
+a#{$button_C}{
+  padding: 0;
+  padding-right: 0 !important;
+  width: auto;
+  background: none;
+  border: none;
+  box-shadow: none;
+  span{
+    width: 200px;
+    border:1px solid $color_button_bg;
+    background-color: $color_button_text;
+    // border-radius: $button_radius+px;
+    border-radius: 0;
+    color: $color_button_bg;
+    position: relative;
+    z-index: 3;
+    display: inline-block;
+    padding: 15px 30px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    &:after{
+      border-color:$color_button_bg;
+      border-width: 1px;
+    }
+  }
+
+  &:hover{
+    box-shadow: none;
+    span{
+
+    }
+  }
+
+  &:before{
+    z-index: 2;
+    content: "";
+    position: absolute;
+    display: block;
+    top: 5px;
+    right: -5px;
+    bottom: -5px;
+    left: 5px;
+    border:1px solid $color_button_bg;
+    // border-radius: $button_radius+px;
+    border-radius: 0;
+  }
+
+  &:hover{
+    span{
+      background: $color_button_bg;
+      color: #fff;
+      &:after{
+        border-color:$color_button_text;
+      }
+    }
+    &:before{
+      transition: 0.15s;
+      top: 0px;
+      right: -0px;
+      bottom: -0px;
+      left: 0px;
+    }
+  }
+}
+
+.button--typeD,
+a.button--typeD,
+#{$button_D},
+a#{$button_D}{
+  padding: 0;
+  padding-right: 0 !important;
+  width: auto;
+  span{
+    width: 200px;
+    border:1px solid $color_button_bg;
+    background-color: $color_button_text;
+    border-radius: $button_radius+px;
+    color: $color_button_bg;
+    position: relative;
+    z-index: 3;
+    display: inline-block;
+    padding: 15px 30px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    &:after{
+      border-color:$color_button_bg;
+      border-width: 1px;
+    }
+  }
+
+  &:before{
+    transition: 0.15s;
+    z-index: 2;
+    content: "";
+    position: absolute;
+    display: block;
+    background: $color_button_bg;
+    top: 5px;
+    right: -5px;
+    bottom: -5px;
+    left: 5px;
+    border:1px solid $color_button_bg;
+    border-radius: $button_radius+px;
+  }
+
+  &:hover{
+    span{
+      background: $color_button_bg;
+      color: #fff;
+      &:after{
+        border-color:$color_button_text;
+      }
+    }
+    &:before{
+      transition: 0.15s;
+      top: 0px;
+      right: -0px;
+      bottom: -0px;
+      left: 0px;
+    }
+  }
+}
+
+
+.button.block{
+  display: block;
+  width: 100%;
+  max-width: 100%;
+}
